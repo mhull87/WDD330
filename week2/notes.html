@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Week 2 Notes</h1>
+    <h2>Readings</h2>
+    <h3><u>JSNinja</u> Ch 1 - Programing Basics</h3>
+    <ul>
+        <li>JavaScript is made to be backward compatible with all versions</li>
+        <li>New primitive data type: Symbol</li>
+        <li>var still works but only use let or const now</li>
+        <li>keep number of global variables to a minimum
+            <ul>
+                <li>assignment of variables inside a block without using let or const will make it available globally
+                    too</li>
+            </ul>
+        </li>
+        <li>backslash is used to escape special characters
+            <ol>
+                <li>Single quote marks \'</li>
+                <li>Double quote marks \"</li>
+                <li>End of line \n</li>
+                <li>Carriage return \r</li>
+                <li>Tab \t</li>
+                <li>To type a backslash, use \\</li>
+            </ol>
+
+        </li>
+        <li>.repeat(n) repeats string literals</li>
+        <ul>
+            <li>you must use the Symbol() function</li>
+            <li>put a unique id into the parentheses to act as the string representation of the symbol</li>
+        </ul>
+        <li>you can have 2 variables point to the same symbol using
+            <ul>
+                <li>const a = Symbol.for('shared symbol');</li>
+                <li>const b = Symbol.for('shared symbol');</li>
+            </ul>
+        </li>
+        <h2>Questions</h2>
+        <ul>
+            <li>How to use the primitive data type Symbol?</li>
+        </ul>
+    </ul>
+    <a href="index.html"><button>Back to Week 2</button></a>
+</body>
+
+</html>
