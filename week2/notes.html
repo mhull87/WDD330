@@ -43,12 +43,281 @@
                 <li>const b = Symbol.for('shared symbol');</li>
             </ul>
         </li>
-        <h2>Questions</h2>
-        <ul>
-            <li>How to use the primitive data type Symbol?</li>
-        </ul>
-    </ul>
-    <a href="index.html"><button>Back to Week 2</button></a>
+        <li>Numbers
+            <ul>
+                <li>Hexadecimal (base 16)
+                    <ul>
+                        <li>starts with 0x</li>
+                        <li>used for color codes</li>
+                        <li>ex: 0xAF (A represents 10, F represents 15 = 175)</li>
+                    </ul>
+                </li>
+                <li>Octal literals (base 8)
+                    <ul>
+                        <li>starts with 0o</li>
+                        <li>ex: 0o47 (4 eights and 7 units = 39)</li>
+                    </ul>
+                </li>
+                <li>Binary literals (base 2)
+                    <ul>
+                        <li>starts with 0b</li>
+                        <li>ex: 0b1010 (1 eight, 0 fours, 1 two and 0 units = 10)</li>
+                    </ul>
+                </li>
+                <li>Exponential Notation
+                    <ul>
+                        <li>multiply by 10 to the power of
+                            <ul>
+                                <li>scientific notation or standard form</li>
+                            </ul>
+                        </li>
+                        <li>ex: 1e6 (1 multiplied by 10 to the power of 6 = 1000000)</li>
+                        <li>ex: 2E3 (2 multiplied by 10^3 = 2000)</li>
+                        <li>decimal values can be created by using a negative index value
+                            <ul>
+                                <li>ex: 2.5e-3 (2.5 multiplied by 10 to the power of -3 (0.001) or 0.0025)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>.toExponential();
+                    <ul>
+                        <li>JavaScript will confuse a dot with a decimal point
+                            <ul>
+                                <li>fix this by:</li>
+                                <li>use two dots (one is the decimal one is the dot notation
+                                    <ul>
+                                        <li>ex: 5..toExponential(); = 5e+0</li>
+                                    </ul>
+                                </li>
+                                <li>put a space before the dot
+                                    <ul>
+                                        <li>ex: 5 .toExponential(); = 5e+0</li>
+                                    </ul>
+                                </li>
+                                <li>always write integers as a decimal
+                                    <ul>
+                                        <li>ex: 5.0.toExpontntial(); = 5e+0</li>
+                                    </ul>
+                                </li>
+                                <li>place the interger in parentheses<ul>
+                                        <li>ex: (5).toExponential(); = 5e+0</li>
+                                    </ul>
+                                </li>
+                                <li>assign the number to a constant
+                                    <ul>
+                                        <li>ex: const number = 5;<br>
+                                            number.toExponential(); = 5e+0
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>toFixed();
+                    <ul>
+                        <li>rounds a number to a fixed number of decimal places (returned as a string)</li>
+                        <li>ex: const PI; = 3.1415926 = undefined<br>
+                            PI.toFixed(3); = 3.142</li>
+                    </ul>
+                </li>
+                <li>toPrecision();
+                    <ul>
+                        <li>rounds a number to a fixed number of significant figures (returned as a string)</li>
+                        <li>ex: 325678..toPrecision(2); = 3.3e+5</li>
+                        <li>ex: 2.459.toPrecision(2); = 2.5</li>
+                    </ul>
+                </li>
+                <li>Incrementing
+                    <ul>
+                        <li>using an incrementing value before (++number) will return the original number and then add 1
+                            <ul>
+                                <li>ex: number++ will return 6, and then increment it to 7</li>
+                            </ul>
+                        </li>
+                        <li>after (number++) will return the number already incremented</li>
+                    </ul>
+                </li>
+                <li>Infinity
+                    <ul>
+                        <li>it will return infinity (or -infinity) if the numbr is too big for the program to handle
+                        </li>
+                    </ul>
+                </li>
+                <li>Bitwise (converts to bitwise (ones and zeros) and back)
+                    <ul>
+                        <li>~ is the bitwise not (!) operator</li>
+                        <li>& is the bitwise and (&&) operator</li>
+                        <li>| is the bitwise or (||) operator</li>
+                        <li>^ is the bitwise or exclusive operator</li>
+                        <li>
+                            << and>> are shift operators and will multiply or divide by 2
+                                <ul>
+                                    <li>ex: 3 << 1; (multiply by 2=6)</li> <li>ex: 16 >> 1; (divide by 2 = 8)</li>
+                                    <li>ex: 5 << 3; (multiply by 2 cubed=40)</li> </ul> </li> </ul> </li> <li>do not use
+                                            ^ for exponents. use **</li>
+                                    <li>for checking equality (== and ===) Nan wont work. use Number.isNaN() to check
+                                    </li>
+
+                                </ul>
+                        </li>
+
+                        <li>Arrays
+                            <ul>
+                                <li>delete arr[3];
+                                    <ul>
+                                        <li>delete array item at index 3 and leave it empty (undefined)</li>
+                                        <li>better to use .splice();</li>
+                                    </ul>
+                                </li>
+                                <li>.length;</li>
+                                <li>.length - 1;</li>
+                                <li>.pop();
+                                    <ul>
+                                        <li>remove the last item</li>
+                                    </ul>
+                                </li>
+                                <li>.shift();
+                                    <ul>
+                                        <li>remove the first item</li>
+                                    </ul>
+                                </li>
+                                <li>.push('item');
+                                    <ul>
+                                        <li>adds new item to the end</li>
+                                    </ul>
+                                </li>
+                                <li>.unshift('item');
+                                    <ul>
+                                        <li>adds new item to the beginning</li>
+                                    </ul>
+                                </li>
+                                <li>.concat();
+                                    <ul>
+                                        <li>merges arrays</li>
+                                        <li>ex: arr2 = arr1.concat(['arr1item0', 'arr1item1', 'arr1item2'];</li>
+                                    </ul>
+                                </li>
+                                <li>spread operator ...
+                                    <ul>
+                                        <li>spreads the items and adds them to a new array</li>
+                                        <li>ex: arr2 = [ ...arr2, ...['arr1item0', 'arr1item1', 'arr1item2'] ];</li>
+                                    </ul>
+                                </li>
+                                <li>.join();
+                                    <ul>
+                                        <li>turns the arry into a string list seperated by commas</li>
+                                        <li>choose a seperator other than a comma by placing itinside the parentheses
+                                            <ul>
+                                                <li>ex: arr2.join(' & ');</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>.slice();
+                                    <ul>
+                                        <li>creates a temporary sub array but does not remove from the orrigional array
+                                        </li>
+                                        <li>ex: arr1.slice(2,4);
+                                            <ul>
+                                                <li>starts at index 2 and ends on index 3</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>.splice()
+                                    <ul>
+                                        <li>removes items from the array and inserts new items</li>
+                                        <li>arr1.splice(3, 1, 'newitem');
+                                            <ul>
+                                                <li>starts at index 3 and replaces 1 item with newitem</li>
+                                                <li>.splice(); will return the removed item(s)</li>
+                                            </ul>
+                                        </li>
+                                        <li>can be used to insert without removing
+                                            <ul>
+                                                <li>ex: arr1.splice(4, 0, 'item');</li>
+                                            </ul>
+                                        </li>
+                                        <li>ex: arr1.splice(3,1); will delete and item without replacing it</li>
+                                    </ul>
+                                </li>
+                                <li>.reverse();</li>
+                                <li>.sort();
+                                    <ul>
+                                        <li>permanently changes array</li>
+                                        <li>string: alphabetical</li>
+                                        <li>numbers: by 1st digit
+                                            <ul>
+                                                <li>you can change this default by using a callback function for the
+                                                    argument</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>.indexOf();</li>
+                                <li>.includes();
+                                    <ul>
+                                        <li>can add an extra parameter to indicate which index to start the search from
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>flatten multidementional arrays
+                                    <ul>
+                                        <li>const summer = ['Jun', 'Jul', 'Aug'];<br>
+                                            const winter = ['Dec', 'Jan', 'Feb'];<br>
+                                            const nested = [ summer, winter ];<br>
+                                            [ [ 'Jun', 'Jul', 'Aug' ], [ 'Dec', 'Jan', 'Feb' ] ]<br><br>
+                                            const flat = [...summer, ...winter];<br>
+                                            [ 'Jun', 'Jul', 'Aug', 'Dec', 'Jan', 'Feb' ]</li>
+                                    </ul>
+                                </li>
+                                <li>use sets to remove any repeated items<ul>
+                                        <li>new Set([1,2,3]);</li>
+                                        <li>.add();</li>
+                                        <li>.size();</li>
+                                        <li>.has();</li>
+                                        <li>.delete();</li>
+                                        <li>.clear();
+                                            <ul>
+                                                <li>clears the entire set</li>
+                                            </ul>
+                                        </li>
+                                        <li>to an array
+                                            <ul>
+                                                <li>ex: arr1 = [...set1] or</li>
+                                                <li>ex: arr1 = Array.from(set1);</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>maps
+                            <ul>
+                                <li>new Map();</li>
+                            </ul>
+                        </li>
+                        <li>Functions
+                            <ul>
+                                <li>.name() can be used for debugging to see which function is causing the problem</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h2>Questions</h2>
+                    <ul>
+                        <li>How to use the primitive data type Symbol?
+                            <ul>
+                                <li>found it...see notes above</li>
+                            </ul>
+                        </li>
+                        <li>Are sets just used for making arrays that don't repeat items?</li>
+
+                    </ul>
+
+                    <a href="index.html"><button>Back to Week 2</button></a>
 </body>
 
 </html>
