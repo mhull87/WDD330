@@ -232,7 +232,7 @@
                 <li>ex: flash.appendChild(flashText);</li>
                 <li>shortcut</li>
                 <li>const flash = document.createElement('li');<br>
-                flash.textContent = 'Flash';</li>
+                    flash.textContent = 'Flash';</li>
                 <li>or</li>
                 <li>createElement(tag, text) {<br>
                     const el = document.createElement(tag);<br>
@@ -252,25 +252,127 @@
         <li>.innerHTML saves from having to creat a childNode
             <ul>
                 <li>can use it to insert tags too</li>
-                <li>ex: heroes.innerHTML = '< li>Harley Quinn< /li>< li>Deadshot< /li>< li>Killer Croc</ li>< li>Enchantress</ li>< li>Captain Boomerang< /li>< li>Katana</ li>< li>Slipknot</ li>';<br>
-                makes: <li>Harley Quinn</li><li>Deadshot</li><li>Killer Croc</li><li>Enchantress</li><li>Captain Boomerang</li><li>Katana</li><li>Slipknot</li></li>
-            </ul>
-            <li>.innerHTML wont work if it is script tags in the HTML</li>
+                <li>ex: heroes.innerHTML = '< li>Harley Quinn< /li> < li>Deadshot< /li> < li>Killer Croc</ li>
+                            < li>Enchantress</ li>
+                            < li>Captain Boomerang< /li> < li>Katana</ li>
+                                < li>Slipknot</ li>';<br>
+                                makes:
+                <li>Harley Quinn</li>
+                <li>Deadshot</li>
+                <li>Killer Croc</li>
+                <li>Enchantress</li>
+                <li>Captain Boomerang</li>
+                <li>Katana</li>
+                <li>Slipknot</li>
         </li>
-        <li>every node has a style property for CSS
-            <ul><li>ex: superman.style.border = 'red 2px solid';</li>
-        </ul></li>
-        <li>camel any properties with a Deadshot
-            <ul>
-                <li>ex: superman.style.backgroundColor = 'blue';</li>
-            </ul>
-        </li>
-        <li>use .style.display = 'none'; to hide elements</li>
-        <li>use .style.display = 'block'; to unhide elements</li>
+    </ul>
+    <li>.innerHTML wont work if it is script tags in the HTML</li>
+    </li>
+    <li>every node has a style property for CSS
+        <ul>
+            <li>ex: superman.style.border = 'red 2px solid';</li>
+        </ul>
+    </li>
+    <li>camel any properties with a Deadshot
+        <ul>
+            <li>ex: superman.style.backgroundColor = 'blue';</li>
+        </ul>
+    </li>
+    <li>use .style.display = 'none'; to hide elements</li>
+    <li>use .style.display = 'block'; to unhide elements</li>
     </ul>
 
 
     <h3><u>JavaScript: Novice to Ninja</u> Ch 7 - Events</h3>
+    <ul>
+        <li>a click event is a click, enter on the keyboard, or a touch</li>
+        <li>addEventListner(event, function);</li>
+        <li>no parenthesis when the function is used as the argument, otherwise it will be called instead of waiting
+        </li>
+        <li>show or count events with the .type property
+            <ul>
+                <li>addEventListener('click', doSomething);<br><br>
+
+                    function doSomething(event) {
+                    console.log(event.type);
+                    }</li>
+            </ul>
+        </li>
+        <li>.target returns a reference to the node that fired</li>
+        <li>Coordinates of an event
+            <ul>
+                <li>screenX and screenY number of px from left and top of screen</li>
+                <li>clientX and clientY number of px from left and top of client (usually browser window)</li>
+                <li>pageX and pageY number of px from the left and top of document (takes into account scrolling)</li>
+            </ul>
+        </li>
+        <li>Events *see events code for examples (there are more than this)
+            <ul>
+                <li>Mouse Events
+                    <ul>
+                        <li>click</li>
+                        <li>mousedown</li>
+                        <li>mouseup</li>
+                        <li>dblclick</li>
+                        <li>mouseover</li>
+                        <li>mouseout</li>
+                        <li>mousemove</li>
+                    </ul>
+                </li>
+                <li>Keyboard Events
+                    <ul>
+                        <li>keydown (will continue to fire if held down)</li>
+                        <li>keypress (has a key properity that tells what key pressed</li>
+                        <li>keyup</li>
+                        <li>Modifier Keys
+                            <ul>
+                                <li>shift ctrl alt and meta will fire the keydown and keyup but not keypress because
+                                    they don't produce any characters on the screen</li>
+                                <li>also show how long they were held (see code)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Touch Events
+                    <ul>
+                        <li>use both touch and mouse events to cover all devices</li>
+                        <li>touchstart (not recommended because it interferes with other user actions, use click instead because it has a 300ms delay</li>
+                        <li>touchend</li>
+                        <li>touchmove</li>
+                        <li>touchenter</li>
+                        <li>touchleave</li>
+                        <li>touchcancel</li>
+                        <li>gestures can be used with Hammer.JS or zingtouch</li>
+                        <li>Touch Event properties
+                            <ul>
+                                <li>touches (0 indexed)</li>
+                                <li>length (how many fingers)</li>
+                                <li>touch.screenX and touch.screenY</li>
+                                <li>touch.radiusX and touch.radiusY</li>
+                                <li>touch.force</li>
+                                <li>touch.identifier (unique ID that can be used to ensure you are dealing with the same touch</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>removeEventListener()
+            <ul>
+                <li>do not use anonymous functions if you want to remove the event listener later</li>
+            </ul>
+        </li>
+        <li>Stopping Default Behavior
+            <ul>
+                <li>preventDefault()</li>
+            </ul>
+        </li>
+        <li>Bubbling bubbles up to top node</li>
+        <li>Capturing flows inward to target node</li>
+        <li>use the third parameter to turn on capturing (true)</li>
+        <li>Stop Bubbling Phase with event.stopPropagation()</li>
+        <li>be carful not to stop other event listeners</li>
+    </ul>
 
     <h2>Questions</h2>
     <ul>
