@@ -1,4 +1,6 @@
 .board {
+    font-size: 145px;
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(3, 150px);
