@@ -44,13 +44,68 @@
 </ul>
 
   <h2><u>Javascript: Novice to Ninja</u> Ch 12 OOP</h2>
-
+<ul>
+  <li>Encapsulation
+    <ul>
+      <li>the inner workings are kept hidden inside the object and only essential functionalities are exposed to the end user</li>
+    </ul>
+  </li>
+  <li>Polymorphism
+    <ul>
+      <li>the same process can be used for different objects (objects can share the same method and then override to more specific implementation)</li>
+    </ul>
+  </li>
+  <li>Inharitance
+    <ul>
+      <li>taking the features of one object and adding some new features (take an objectthat already exists and inherit all its properties and methods)</li>
+    </ul>
+  </li>
+  <li>constructors use the this keyword</li>
+  <li>then instanciate the object with a new object</li>
+  <li>built in objects
+    <ul>
+      <li>Object</li>
+      <li>Array</li>
+      <li>Function</li>
+    </ul>
+  </li>
+  <li>class declaration
+    <ul>
+      <li>class Dice {<br>
+        constructor(sides=6) {<br>
+        this.sides = sides;<br>
+        }<br>
+        roll() {<br>
+        return Math.floor(this.sides * Math.random() + 1)<br>
+        }<br>
+        }</li>
+        <li>instance:</li>
+        <li>const blueDice = new Dice(20);</li>
+    </ul>
+  </li>
+  <li>static methods are only available within the class not instances of the class</li>
+  <li>use .prototype to add properties and methods</li>
+  <li>find the prototype with Object.getPrototypeOf(raph);</li>
+  <li>prototype is live and shared by all instances of the class overriding prevoiusly declared properties</li>
+  <li>override prototype by assigning it another properity (own properities take presidence over prototype properties</li>
+  <li>use extends and super<br>
+    class NinjaTurtle extends Turtle {<br>
+  constructor(name) {<br>
+  super(name);<br>
+this.weapon = 'hands';<br>
+  }<br>
+attack() { return `Feel the power of my ${this.weapon}!` }<br>
+  }</li>
+  <li></li>
+</ul>
 
   <h2><u>Javascript: Novice to Ninja</u> Ch 15 Modern Javascript => Modular JS Section</h2>
 
 
   <h2>Questions</h2>
-
+  <ul>
+    <li>Is it proper to use patterns to validate forms in the html first and then use validation in JS?</li>
+  </ul>
 
     <a href="index.html"><button>Back to Week 4 Folder</button></a>
 </body>
