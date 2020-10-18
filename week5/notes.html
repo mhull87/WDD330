@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <h1>Week 5 Notes</h1>
+
+  <h2><u>Javascript: Novice to Ninja</u> Ch 10 Testing & Debugging</h2>
+
+  <ul>
+    <li><h2>Errors, Exceptions, and Warnings</h2>
+    <ul>
+      <li>system error</li>
+      <li>programmer error</li>
+      <li>user error</li>
+    </ul></li>
+
+    <li><h2>Exceptions</h2>
+    <ul>
+      <li>an error that produces a return value that can be used by the program to deal with thte error</li>
+      <li>Stack Traces</li>
+    </ul></li>
+
+    <li><h2>Warnings</h2>
+    <ul>
+      <li>an error but not enough to make the program crash</li>
+    </ul></li>
+
+    <li><h2>Strict Mode</h2>
+    <ul>
+      <li>limits the use of some deprecated features</li>
+      <li>poor style is viewed as an error</li>
+      <li>can use strict mode on a perfunction basis by placing it inside the function</li>
+      <li>'use strict'; //put this on the first line of the js file or prefered way:</li>
+      <li>(function() {<br>
+          'use strict';<br>
+            // all code here<br>
+      }());</li>
+      <li>modules use strict mode as default</li>
+      <li>Linting tools help 'clean up' code style</li>
+    </ul></li>
+
+    <li><h2>Feature Decection</h2>
+    <ul>
+      <li>use an if statement to see if something is supported in the browser</li>
+      <li>if (window.holoDeck) {<br>
+      virtualReality.active();<br>
+      }</li>
+      <li>Modernizr library or caniuse.com</li>
+    </ul></li>
+
+    <li><h2>Debugging in the Browser</h2>
+    <ul>
+      <li>use alert();</li>
+      <li>use the console (console.log();)</li>
+      <li>console.trace(); will produce a stack trace</li>
+      <li>breakpoints with the debugger; keyword</li>
+    </ul></li>
+
+    <li><h2>Error Objects</h2>
+    <ul>
+      <li>const error - new Error('Oops, something went wrong');</li>
+      <li>EvalError is not used anymore</li>
+      <li>RangeError is thrown when a number is outside of the allowable range</li>
+      <li>ReferenceError is thrown when a reference is made to an item that doesn't exist</li>
+      <li>SyntaxError is thrown when there's an error in the code's syntax</li>
+      <li>TypeError is thrown when there's an error in the type of value used (a string where a number is expected)</li>
+      <li>URIError is thrown when there's a problem encoding or decoding the URI</li>
+      <li>InternalError is a non-standard error that is thrown when an error occurs in the JavaScript engine</li>
+    </ul></li>
+
+    <li><h3>Throwing Exceptions</h3>
+    <ul>
+      <li>throw your own exceptions using a throw statement</li>
+      <li>throw new Error('Something has gone badly wrong!';</li>
+      <li>function squareRoot(numbr) {<br>
+          'use strict';<br>
+          if (number < 0) {<br>
+            throw new RangeError('You cannot find the square root of negative numbers')<br>
+          }<br>
+        return Math.sqrt(number);<br>
+      };<br><br>
+    squareRoot(121); //11<br><br>
+  squareRoot(-1); //RangeError: You can't fine the square root of negative numbers</li>
+    </ul></li>
+
+    <li><h3>Exception Handling</h3>
+    <ul>
+      <li>You can catch the error keeping it hidden from the user but still identify it</li>
+      <li>try, catch, finally
+        <ul>
+          <li>function imaginarySquareRoot(number) {<br>
+          'use strict';<br>
+          try {<br>
+            return String(squareRoot(number));<br>
+          } catch(error) {<br>
+            return squareRoot(-number)+'i';<br>
+          }<br>
+          }<br></li>
+          <li>the catch block will only be run if there is an error otherwise it is skipped</li>
+          <li>imaginarySquareRoot(-49) //no error message shown //'7i'</li>
+          <li>a finally block can be added to always be run after the try or catch, regardless of which runs</li>
+          <li>function imaginarySquareRoot(number) {<br>
+              'use strict';<br>
+              let answer;<br>
+              try {<br>
+                answer = String(squareRoot(number));<br>
+              } catch(error) {<br>
+                answer = squareRoot(-number)+'i';<br>
+              } finally {<br>
+                return `+ or - ${answer}`;<br>
+              }<br>
+          }<br></li>
+          <li>always test your code and functions</li>
+        </ul>
+      </li>
+
+      <li>Jest is fun run jest -c {} with a .test.js file</li>
+    </ul></li>
+  </ul>
+
+  <h2>Questions</h2>
+  <ul>
+    <li>Interesting. There are actually several coding errors in this book. There is even one in the testing chapter...guess they didn't test it</li>
+  </ul>
+
+    <a href="index.html"><button>Back to Week 5 Folder</button></a>
+</body>
+</html>
