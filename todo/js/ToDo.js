@@ -2,6 +2,11 @@ import utils from './utils.js';
 import ls from './ls.js';
 
 document.querySelector('#addBtn').onclick = newTodo;
+document.querySelector('#activeFilter').onclick = applyFilter;
+document.querySelector('#todos-wrapper').onclick = check;
+document.querySelector('#allFilter').onclick = applyFilter;
+
+loadTodos();
 
 function loadTodos() {
   const todoList = ls.getTodoList();
@@ -12,6 +17,7 @@ function loadTodos() {
   })
 }
 
+//step 1
 function newTodo() {
   const todo= createTodo();
   const todoDiv = createTodoElement(todo);
@@ -19,6 +25,7 @@ function newTodo() {
   ls.saveTodo(todo);
 }
 
+//step 2
 function createTodo() {
   const input = document.querySelector('#todoInput');
   const newTodo = {id: Date.now(), content: input.value, completed: false}
@@ -26,6 +33,7 @@ function createTodo() {
   return newTodo;
 }
 
+//step 3
 function createTodoElement(todo) {
   //todo div
   const todoDiv = document.createElement('div');
@@ -33,7 +41,9 @@ function createTodoElement(todo) {
 
   //complete btn
   const completeBtn = document.createElement('button');
+  completeBtn.setAttribute('data-id', todo.id);
   completeBtn.classList.add('complete-btn');
+  completeBtn.onclick = check;
 
   //todo content
   const todoContent = document.createElement('div');
@@ -44,7 +54,7 @@ function createTodoElement(todo) {
   const deleteBtn = document.createElement('button');
   deleteBtn.setAttribute('data-id', todo.id);
   deleteBtn.classList.add('todo-delete-btn');
-  deleteBtn.innerText = 'X';
+  deleteBtn.innerHTML = '<b>&#128465<b>';
   deleteBtn.onclick = deleteTodo;
 
   todoDiv.appendChild(completeBtn);
@@ -54,6 +64,7 @@ function createTodoElement(todo) {
   return todoDiv;
 }
 
+//step 4
 function addToList(todoDiv) {
   //add to the document
   document.querySelector('#todos').appendChild(todoDiv);
@@ -65,4 +76,31 @@ function deleteTodo(e) {
   ls.deleteTodo(btn.getAttribute('data-id'));
   document.querySelector('#todos').innerHTML = '';
   loadTodos();
+}
+
+function check(e) {
+  const mark = e.currentTarget;
+  const strike = mark.parentElement;
+  mark.classList.toggle('check')
+  strike.classList.toggle('strike')
+}
+
+
+function applyFilter(e) {
+  //clear the list
+  document.querySelector('#todos').innerHTML = '';
+  //declare variables
+  let filteredTodos = [];
+  const allTodos = ls.getTodoList();
+  //check which filter to apply
+  if(e.currentTarget.id == 'activeFilter') {
+    filteredTodos = utils.activeFilter(allTodos)
+  } else if(e.currentTarget.id =='allFilter') {
+    filteredTodos = allTodos
+  }
+  //draw the list
+  filteredTodos.forEach(todo => {
+    const el = createTodoElement(todo)
+    addToList(el)
+  })
 }

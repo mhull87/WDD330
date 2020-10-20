@@ -16,7 +16,7 @@ function getTodoList() {
   const todoListString = localStorage.getItem('toDoList');
   let todoList = [];
 
-  if(todoListString) {
+  if (todoListString) {
     todoList = JSON.parse(todoListString);
   }
 
@@ -26,5 +26,5 @@ function getTodoList() {
 export default {
   saveTodo,
   getTodoList,
-  deleteTodo
+  deleteTodo,
 }
