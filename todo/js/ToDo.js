@@ -44,10 +44,8 @@ function createTodoElement(todo) {
   const todoDiv = document.createElement('div');
   todoDiv.classList.add('todo');
   if(todo.completed === true) {
-    todoDiv.classList.add('check');
     todoDiv.classList.add('strike');
   } else if(todo.completed === false) {
-    todoDiv.classList.remove('check');
     todoDiv.classList.remove('strike');
   }
 
@@ -55,8 +53,13 @@ function createTodoElement(todo) {
   const completeBtn = document.createElement('button');
   completeBtn.setAttribute('data-id', todo.id);
   completeBtn.classList.add('complete-btn');
- // completeBtn.onclick = check;
-  completeBtn.addEventListener('click', check)
+  if(todo.completed === true) {
+    completeBtn.classList.add('check');
+  } else if(todo.completed === false) {
+    completeBtn.classList.remove('check');
+  }
+
+  completeBtn.onclick = check;
 
   //todo content
   const todoContent = document.createElement('div');
@@ -94,10 +97,6 @@ function deleteTodo(e) {
 
 function check(e) {
   const mark = e.currentTarget;
-  const strike = mark.parentElement;
-//    mark.classList.toggle('check');
-//    strike.classList.add('strike');
-
   const allTodos = ls.getTodoList();
 
   allTodos.forEach(item => {
