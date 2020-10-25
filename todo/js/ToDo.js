@@ -32,6 +32,7 @@ function createTodo() {
     content: input.value,
     completed: false
   }
+  
   input.value = '';
   return newTodo;
 }
@@ -86,8 +87,8 @@ function deleteTodo(e) {
 function check(e) {
   const mark = e.currentTarget;
   const strike = mark.parentElement;
-  mark.classList.toggle('check');
-  strike.classList.toggle('strike');
+    mark.classList.add('check');
+    strike.classList.add('strike');
 
   const allTodos = ls.getTodoList();
 
@@ -95,12 +96,13 @@ function check(e) {
     if (item.id == mark.getAttribute('data-id')) {
       if (item.completed == true) {
         item.completed = false;
+
       } else {
         item.completed = true;
+
       }
       item.id = Date.now();
       ls.saveTodo(item);
-
     }
     const remove = mark.getAttribute('data-id')
     ls.deleteTodo(remove);
