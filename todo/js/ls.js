@@ -3,7 +3,6 @@ function saveTodo(todo) {
 
   toDoList.push(todo);
   localStorage.setItem('toDoList', JSON.stringify(toDoList));
-
 }
 
 function deleteTodo(id) {
