@@ -3,10 +3,9 @@ import ls from './ls.js';
 
 document.querySelector('#addBtn').onclick = newTodo;
 document.querySelector('#activeFilter').onclick = applyFilter;
-document.querySelector('#todos-wrapper').onclick = check;
 document.querySelector('#allFilter').onclick = applyFilter;
+document.querySelector('#completedFilter').onclick = applyFilter;
 
-loadTodos();
 
 function loadTodos() {
   const todoList = ls.getTodoList();
@@ -16,10 +15,10 @@ function loadTodos() {
     addToList(el);
   })
 }
-
+loadTodos();
 //step 1
 function newTodo() {
-  const todo= createTodo();
+  const todo = createTodo();
   const todoDiv = createTodoElement(todo);
   addToList(todoDiv);
   ls.saveTodo(todo);
@@ -28,7 +27,11 @@ function newTodo() {
 //step 2
 function createTodo() {
   const input = document.querySelector('#todoInput');
-  const newTodo = {id: Date.now(), content: input.value, completed: false}
+  const newTodo = {
+    id: Date.now(),
+    content: input.value,
+    completed: false
+  }
   input.value = '';
   return newTodo;
 }
@@ -78,13 +81,36 @@ function deleteTodo(e) {
   loadTodos();
 }
 
+
 function check(e) {
   const mark = e.currentTarget;
   const strike = mark.parentElement;
-  mark.classList.toggle('check')
-  strike.classList.toggle('strike')
-}
+        mark.classList.toggle('check');
+        strike.classList.toggle('strike');
 
+  // ls.completeTodo(mark.getAttribute('data-id'));
+  //  document.querySelector('#todos').innerHTML = '';
+  //  loadTodos();
+
+
+  const allTodos = ls.getTodoList();
+
+
+  allTodos.forEach(item => {
+    if (item.id == mark.getAttribute('data-id')) {
+      if (item.completed == true) {
+        item.completed = false;
+      } else {
+        item.completed = true;
+      }
+      item.id = Date.now();
+      ls.saveTodo(item);
+
+    }
+    const remove = mark.getAttribute('data-id')
+    ls.deleteTodo(remove);
+  })
+}
 
 function applyFilter(e) {
   //clear the list
@@ -93,10 +119,12 @@ function applyFilter(e) {
   let filteredTodos = [];
   const allTodos = ls.getTodoList();
   //check which filter to apply
-  if(e.currentTarget.id == 'activeFilter') {
+  if (e.currentTarget.id == 'activeFilter') {
     filteredTodos = utils.activeFilter(allTodos)
-  } else if(e.currentTarget.id =='allFilter') {
+  } else if (e.currentTarget.id == 'allFilter') {
     filteredTodos = allTodos
+  } else if (e.currentTarget.id == 'completedFilter') {
+    filteredTodos = utils.completedFilter(allTodos)
   }
   //draw the list
   filteredTodos.forEach(todo => {
