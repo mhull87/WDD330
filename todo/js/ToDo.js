@@ -12,6 +12,7 @@ function loadTodos() {
 
   todoList.forEach(todo => {
     const el = createTodoElement(todo)
+
     addToList(el);
   })
 }
@@ -42,6 +43,13 @@ function createTodoElement(todo) {
   //todo div
   const todoDiv = document.createElement('div');
   todoDiv.classList.add('todo');
+  if(todo.completed === true) {
+    todoDiv.classList.add('check');
+    todoDiv.classList.add('strike');
+  } else if(todo.completed === false) {
+    todoDiv.classList.remove('check');
+    todoDiv.classList.remove('strike');
+  }
 
   //complete btn
   const completeBtn = document.createElement('button');
@@ -87,8 +95,8 @@ function deleteTodo(e) {
 function check(e) {
   const mark = e.currentTarget;
   const strike = mark.parentElement;
-    mark.classList.add('check');
-    strike.classList.add('strike');
+//    mark.classList.toggle('check');
+//    strike.classList.add('strike');
 
   const allTodos = ls.getTodoList();
 
