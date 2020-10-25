@@ -46,7 +46,8 @@ function createTodoElement(todo) {
   const completeBtn = document.createElement('button');
   completeBtn.setAttribute('data-id', todo.id);
   completeBtn.classList.add('complete-btn');
-  completeBtn.onclick = check;
+ // completeBtn.onclick = check;
+  completeBtn.addEventListener('click', check)
 
   //todo content
   const todoContent = document.createElement('div');
@@ -85,16 +86,10 @@ function deleteTodo(e) {
 function check(e) {
   const mark = e.currentTarget;
   const strike = mark.parentElement;
-        mark.classList.toggle('check');
-        strike.classList.toggle('strike');
-
-  // ls.completeTodo(mark.getAttribute('data-id'));
-  //  document.querySelector('#todos').innerHTML = '';
-  //  loadTodos();
-
+  mark.classList.toggle('check');
+  strike.classList.toggle('strike');
 
   const allTodos = ls.getTodoList();
-
 
   allTodos.forEach(item => {
     if (item.id == mark.getAttribute('data-id')) {
@@ -110,6 +105,8 @@ function check(e) {
     const remove = mark.getAttribute('data-id')
     ls.deleteTodo(remove);
   })
+    document.querySelector('#todos').innerHTML = '';
+    loadTodos();
 }
 
 function applyFilter(e) {
