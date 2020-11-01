@@ -1,27 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <h1>Week 7 Notes</h1>
 
   <h2><u>Javascript: Novice to Ninja</u> Ch 11 Further Functions</h2>
 
   <ul>
-    <li><h3>Function Properties and Methods</h3>
+    <li>
+      <h3>Function Properties and Methods</h3>
+      <ul>
+        <h4>Call and Apply Methods</h4>
+        <li>see code</li>
+      </ul>
 
-</li>
-</ul>
+      <ul>
+        <h4>Memoization</h4>
+        <li>save a functions return value into a cache property to use later</li>
+        <li>see code</li>
+      </ul>
+    </li>
 
-<h2>Questions</h2>
-<ul>
-  <li></li>
-</ul>
+    <li>
+      <h3>Immediately Invoked Function Expressions</h3>
+      <ul>
+        <li>place the whole declaration inside parentheses</li>
+        <li>see code</li>
+
+        <ul>
+          <h4>Temporary Variables</h4>
+          <li>place Temporary variables into an IIFE</li>
+          <li>see code</li>
+        </ul>
+
+        <ul>
+          <h4>Initialization Code</h4>
+          <li>an IFFE is for code only used once</li>
+          <li>See code</li>
+        </ul>
+
+        <ul>
+          <h4>Safe Use of Strict Mode</h4>
+          <li>if you are working with other peoples code dont put 'use strict' in the top, put it in your functions</li>
+        </ul>
+
+        <ul>
+          <h4>Creating Self-contained Code Blocks</h4>
+          <li>see code</li>
+        </ul>
+      </ul>
+    </li>
+
+    <li>
+      <h3>Functions that Define and Rewrite Themselves</h3>
+      <ul>
+        <li>assign an anonymous function to a variable that has the same name as the function</li>
+        <li>see code #1</li>
+        <li>if assigned to another variable the origional function will be retained in that variable</li>
+        <li>see code #2</li>
+        <li>once the function is redefined it will no longer hold any previous properties</li>
+
+        <ul>
+          <h4>Init-Time Branching</h4>
+          <li>use this to avoid checking for features every time they're invoked</li>
+          <li>see code</li>
+        </ul>
+
+        <ul>
+          <h4>Recursive Functions</h4>
+          <li>invokes itself until a certain condition is met</li>
+          <li>see code</li>
+        </ul>
+      </ul>
+
+    <li>
+      <h3>Callbacks</h3>
+
+      <ul>
+        <h4>Event-driven Asynchronous Programming</h4>
+        <li>on an event run this code</li>
+        <li>see code</li>
+      </ul>
+
+      <ul>
+        <h4>Promises</h4>
+        <li>represent the future result of an asynchronous operation</li>
+        <li>does the same as callbacks but simplifies the process</li>
+        <li>pending, unsettled, settles</li>
+        <li>resolved - completed successfully, rejected - not successful or error</li>
+        <li>see code</li>
+        <li>Deal with a settled promise with then() and catch()</li>
+        <li>see code</li>
+        <li>chain multiple promises with multiple .then()</li>
+        <li>async and await make asynchronous functions act as syncronous functions</li>
+        <li>see code</li>
+        <li>functions can accept functions (callbacks) or return a function</li>
+        <li>see notes</li>
+      </ul>
+    </li>
+
+    <li>
+      <h3>Closures</h3>
+      <ul>
+        <li>a reference to a variable that waas created inside the scope of another function and kept alive and used in
+          another part of the program</li>
+        <li>see code</li>
+        <li>functions declared from within another function have acces to any variables declared in the outer function's
+          scope</li>
+      </ul>
+
+      <ul>
+        <h4>Returning Functions</h4>
+        <li>a closure is formed when the inner function is returned by the outer function maintaining acess to any
+          variables declared inside the enclosing function</li>
+        <li>see code</li>
+        <li>they can also change the value of these variables</li>
+      </ul>
+
+      <ul>
+        <h4>Generators</h4>
+        <li>functions used to produce iterators that maintain the state of a value</li>
+        <li>to define a generator function, an asterisk symbol is placed after the function declaration</li>
+        <li>see code</li>
+        <li>returns a generator object used to create an iterator that implements a next() method that return a value
+          every time the next() ethod is called</li>
+        <li>see code</li>
+        <li>uses a yield keyword to return a value</li>
+        <li>yield is different than return because yield remembers the state of the value the nexrt time yield is called
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <h3>Functional Programming</h3>
+      <ul>
+        <li>pure functions do not change the state of the arguments</li>
+        <li>breaking down processes into steps that can be applied as a series of functions</li>
+        <li>curring or partial applicatin applies one argument at a time to a function. A new functin is returned until
+          all the arguments have been used</li>
+      </ul>
+    </li>
+    </li>
+  </ul>
+
+  <h2>Ch 13: Ajax</h2>
+  <ul>
+    <li>allows web pages to communicate asynchronosly with a server and dynamically updates web pages without reloading
+    </li>
+    <li>enables data to be sent and reieved in the background</li>
+
+    <ul>
+      <h3>Clients and Servers</h3>
+      <li>Javascript is client-side but Ajax allows it to communicatewith the serer</li>
+    </ul>
+
+    <ul>
+      <h3>The Feth API</h3>
+      <h4>Basic Usage</h4>
+      <ul>
+        <li>global fetch() method</li>
+        <li>see code</li>
+      </ul>
+
+      <ul>
+        <h4>Response Interface</h4>
+        <li>.ok to check the status property</li>
+        <li>see code</li>
+        <li>some response object properties are headers, url, redirect, type, frobidden</li>
+        <li>see code for different responses</li>
+      </ul>
+
+      <ul>
+        <h4>Request Interface</h4>
+        <li>use the Request() constructor with the properties url (required), method (GET), headers, mode (CORS), cache, credintials (cookies), redirect</li>
+        <li>see code</li>
+      </ul>
+    </ul>
+  </ul>
+
+  <h2>Questions</h2>
+  <ul>
+    <li></li>
+  </ul>
 
   <a href="index.html"><button>Back to Week 7 Folder</button></a>
 
 </body>
+
 </html>
