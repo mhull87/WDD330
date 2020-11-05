@@ -12,3 +12,36 @@ fetch(apiURL)
 .then(response => response.json())
 .then(data => console.log(Object.entries(data)))
 .catch(error => console.log('There was an error:', error))
+
+async function getStarwars(url) {
+  try {
+    const response = await fetch(url);
+    if(!response.ok) {
+      throw Error(response.statusText)
+    } else {
+      const fetchJson = await response.json();
+      renderStarwars(fetchJson)
+    }
+  } catch(error) {
+      console.log(error);
+    }
+}
+
+
+function renderStarwars(data) {
+  const peopleList = document.getElementById('output');
+  const btn = document.getElementById('btn');
+
+  if(data.next) {
+    btn.textContent = 'Show More';
+    btn.setAttribute('onclick', `getStarwars('${data.next}')`)
+  }
+
+  console.log(data);
+  
+  data.results.forEach(person => {
+    const listItem = document.createElement('li');
+    listItem.textContent = person.name;
+    peopleList.appendChild(listItem);
+  });
+}
