@@ -431,25 +431,25 @@ fetch(url)
 
 //Redirects
 fetch(url)
-.then(response => response.redirect(newURL)); //redirects to another URL
+.then(response => response.redirect(newURL)) //redirects to another URL
 .then(/*do something else*/)
 .catch(error => console.log('there was an error: ', error))
 
 //Text Responses
 fetch(Url)
-.then(response => response.text()); //transforms the text stream into a JavaScript string
+.then(response => response.text()) //transforms the text stream into a JavaScript string
 .then(text => console.log(text))
 .catch(error => console.log('There was an error: ', error))
 
 //File Responses
 fetch(url)
-.then(response => response.blob()); //transforms the data into a blob object
+.then(response => response.blob()) //transforms the data into a blob object
 .then(blob => console.log(blob.type))
 .catch(error => console.log('There was an error: ', error))
 
 //JSON Responses
 fetch(url)
-.then(response => response.json()); //transforms the JSON data into a JavaScript object
+.then(response => response.json()) //transforms the JSON data into a JavaScript object
 .then(data => console.log(Object.entries(data)))
 .catch(error => console.log('There was an error: ', error))
 
