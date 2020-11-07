@@ -15,16 +15,126 @@
     <li>
       <h3>Transforms</h3>
       <ul>
-        <li></li>
+        <li>
+          <ul>
+            <h4>Translate:</h4>
+            <li>transform: translate(45px, -45px);</li>
+            <li>moves alsong the x and/or y axis</li>
+          </ul>
+        </li>
+
+        <li>
+          <ul>
+            <h4>Scaling:</h4>
+            <li>transform: scale(1.5, .23);</li>
+            <li>along the horizontial and vertical dimensions</li>
+            <li>scaling does not change the other elements, it could overlap</li>
+          </ul>
+        </li>
+
+        <li>
+          <ul>
+            <h4>Rotation</h4>
+            <li>transform: rotate(10deg) translateX(40px) scale(1.5);</li>
+            <li>values can be degrees, grads, radians, or turns</li>
+            <li>they will be exicuted in the order listed</li>
+          </ul>
+        </li>
+
+        <li>
+          <ul>
+            <h4>Skew</h4>
+            <li>transform: skew(15deg, 4deg)</li>
+          </ul>
+        </li>
+
+        <li>Change the origin with transform-origin: top center; or 10% 10%;</li>
+        <li>default is center</li>
       </ul>
     </li>
+
+    <li>
+      <ul>
+        <h3>Transitions</h3>
+        <li>change the transformation</li>
+        <li>declare the origional state and the final state.</li>
+        <li>transition-property: transform;</li>
+        <li>transition-property: transform, color;</li>
+        <li>use as many as you want with a comma seperated list or all</li>
+        <li>transition-duration: .2s;</li>
+        <li>200ms is the optimum time for a transition: anything slower will amke the website seem slow</li>
+        <li>transition-timing-function: ease out;</li>
+        <li>lets you control overall animation like fast first then slow</li>
+        <li>set it specifically with cubic-bezier()</li>
+        <li>steps(5, start) would jump through the equidistant steps of 0%, 20%, 40%, 60%, and 80%</li>
+        <li>steps(5, end) would go 30%, 40%, 60%, 80% and 100%</li>
+        <li>transition-delay: 50ms;</li>
+        <li>negative delays make some cool effects</li>
+        <li>shorthand:</li>
+        <li>transition: transform .2s ease-out 50ms;</li>
+        <li>delay goes after duration otherwise any order is fine</li>
+      </ul>
+    </li>
+
+    <li>
+      <h3>Animations</h3>
+      <li>Keyframes allow you to set multiple changing points</li>
+      <li>@keyframes moveRight {<br>
+            from {<br>
+              transform: translateX(-50%);<br>
+            }<br>
+            to {<br>
+              transform: translateX(50%);<br>
+            }<br>
+          }<br><br>
+          @keyframes appearDissapear {<br>
+            0%, 100% {<br>
+              opacity: 0;<br>
+            }<br>
+            20%, 80% {<br>
+              opacity: 1;<br>
+            }<br>
+          }<br><br>
+          @keyframes bgMove {<br>
+            100% {<br>
+              background-position: 120% 0;<br>
+            }<br>
+          }
+      </li>
+      <li>animation-name: appearDissapear;</li>
+      <li>animation-duration: 300ms;</li>
+      <li>animation-timing-function: linear;</li>
+      <li>animation-iteration-count: infinite; or any number of times</li>
+      <li>animation-direction: alternate; will run from 0% to 100% and then 100% back to 0% instead of starting over from 0%</li>
+      <li>animation-delay: 50ms;</li>
+      <li>animation-fill-made: none, forwards, backwards, or both</li>
+      <li>animation-play-state: running or paused;</li>
+      <li>Shorthand:</li>
+      <li>animation: 300ms ease-in alternate 5s backwards appearDisappear;</li>
+    </li>
+  </ul>
+
+  <h2><u>HTML5 & CSS3 for the Real World</u> Ch 12 Canvas, SVG and Drag and Drop</h2>
+
+  <ul>
+    <h3>Canvas</h3>
+    <ul>
+      <li>draw anything through JavaScript</li>
+      <li>improves performance because you do not need to download images</li>
+      <li>add canvas element to your page. any text inside will only show up if tghe browser does not support canvas</li>
+      <li>add an id and or class to grab with JavaScript</li>
+      <li>add width and height in the html</li>
+      <li>use a css border to see where it is on the page</li>
+      <li>drawing in canvas:::see code</li>
+    </ul>
+
+    <li></li>
   </ul>
 
   <h2>Questions</h2>
   <ul>
     <li></li>
   </ul>
-
   <a href="index.html"><button>Back to Week 8 Folder</button></a>
 
 </body>
