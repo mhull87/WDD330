@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script src="starwars.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="starwars.js"></script>
 </head>
+
 <body>
-  <div>
-    <ul id="output"></ul>
-  </div><br><br>
-  <button id="btn" onclick="getStarwars('https://swapi.dev/api/people')">People List</button>
-  <br>
-  <br>
-  <a href="code.html"><button>Back to code page</button></a>
+    <div>
+        <ul id="output"></ul>
+    </div><br><br>
+
+    <div id='prev-btn-div'>
+        <button id="prevBtn" class='hidden' onclick="getPrevious()">previous</button>
+    </div>
+    <button id="btn" onclick="getStarwars('https://swapi.dev/api/people')">People List</button>
 </body>
+
 </html>
