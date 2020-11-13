@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Week 9 Notes</h1>
+  <h2><u>JavaScript Novice to Ninja</u> Ch 9 The Window Object</h2>
+
+  <ul>
+    <li>
+      <h3>The Browser Object Model (BOM)</h3>
+      <ul>
+        <li>access the window object by using window. or the this keyword</li>
+        <li>window.alert('Hello); pop up dialog box</li>
+        <li>window.confirm('Do you wish to continue'); pop up box for conformation</li>
+        <li>window.prompt('Please enter your name.'); pop up box with an input field</li>
+        <li>these stop the program and can be an issue if something else needs to process at the same time or is waiting
+          for a callback function</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>Browser Information</h3>
+        <li>window.navigator.userAgent // returns the browser type ex. Safari version 10 on Mac OS</li>
+        <li>window.location.href //returns the URL of the current page</li>
+        <li>window.location.protocol //returns the protocol used ex. https</li>
+        <li>window.location.host //returns the domain of the current URL and the port number</li>
+        <li>window.location.hostname // returns the domain of the current URL</li>
+        <li>window.location.port //returns the port or an empty string if the port is not explicitly stated in the URL
+        </li>
+        <li>window.location.pathname //returns the path that follows the domain</li>
+        <li>window.location.search //returns ? followed by the query string parameters</li>
+        <li>window.location.hash //returns # followed by the fragment identifier</li>
+        <li>window.location.origin //returns the protocol and domain where the current page originated from</li>
+        <li>window.location.reload(); //force a reload of the current page</li>
+        <li>window.location.assign(); //loads another resource from a URL provided as a parameter</li>
+        <li>window.location.replace(); //same as above but the current page will not be stored in the session history
+        </li>
+        <li>window.location.toString(); //returns a string of the whole URL</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>The Browser History</h3>
+        <li>window.history can be used to access information about any previously visited pages in the current browser
+          session</li>
+        <li>window.history.length //how many pages before the current page</li>
+        <li>window.history.go(); //navigate to a specific page 0 being current positive ahead negative back</li>
+        <li>window.history.forward //adead one page</li>
+        <li>window.history.back //back on page</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>Controlling Windows</h3>
+        <li>window.open(); //opens a new window of the first parameter, the window title as second parameter and a list
+          of
+          attributes as the third parameter</li>
+        <li>popup.close();</li>
+        <li>window.moveTo(); //x and y coordinates of the screen</li>
+        <li>window.resizeTo(); //two demensions</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>Screen Information</h3>
+        <li>window.screen.height //returns current height</li>
+        <li>window.screen.width //returns current width</li>
+        <li>window.screen.avalWidth //returns current width without any operating menus</li>
+        <li>window.screen.avalHeight</li>
+        <li>window.screen.colorDepth; //find the color depth of the user's monitor</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>The Document Object</h3>
+        <li>document.write('Hello World'); //writes a string of text to the page if the page is alread loaded it will
+          completely replace the current document</li>
+        <li>document.write('<h1>Hello, world!</h1>')</li>
+        <li>
+          <h1>
+            <script>
+              document.write('Hello, World!')
+            </script>
+          </h1>//if used in the script tages it will not replace the page
+        </li>
+        <h4>Cookies</h4>
+        <li>small files that are saved locally o a user's computer</li>
+        <li>stores information for faster loading</li>
+        <li>limited to 4KB of data and 20 cookies per domain</li>
+        <li>create a cookie, assign it to JavaScript's 'cookie jar'</li>
+        <li>document.cookie = 'name=Melissa';</li>
+        <li>document.cookie: //to see the contents of the cookie jar</li>
+        <li>const cookies = document.cookie.split("; ");<br>
+          for(crumb of cookies) {<br>
+          const [key,value] = crumb.split("=");<br>
+          console.log(`The value of ${key} is ${value}`);<br>
+          }<br>
+          //The value of name is Melissa</li>
+        <li>cookies are session cookies by default</li>
+        <li>const expiryDate = new Date();<br>
+          const tomorrow = expirtDate.getTime() + 1000 * 60 * 60 * 24;<br>
+          expirtDate.setTime(tomorrow);<br>
+          document.cookie = `name=Batman; expires=${expirtDate.toUTCString()}`;<br>
+          document.cookie = 'name=Batman; max-age=86400'<br>
+          //86400 secs = 1 day</li>
+        <li>document.cookie = 'name=Batman; path=/' or document.cookie = 'name=Batman; domain=sitepoint.com'; // allows
+          the root directory to have access</li>
+        <li>add secure for HTTPS only</li>
+        <li>to remove a cookie set it to expire at a time in the past</li>
+        <li>cookie libraries: Cookies.js or jsCookie</li>
+        <li>window.setInterval(); //repeatedly calls the function every give milliseconds</li>
+        <li>function chant() {console.log('Beetlejuice');}<br>
+          const summon = window.setInterval(chant, 1000); //6</li>
+        <li></li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>Timing Functions</h3>
+        <li>window.setTimeout( () => alert('Time's Up!'), 3000); //4</li>
+        <li>window.clearTimeout(4);</li>
+        <h4>Animation</h4>
+        <li>use setTimeout() and setInterval() for animations</li>
+        <li>see code</li>
+        <li>rotation with CSS</li>
+        <li>#square {<br>
+          margin: 100px;<br>
+          width: 100px;<br>
+          height: 100px;<br>
+          background: #cc0;<br>
+          animation: spin 4s linear infinite;<br>
+          }<br>
+          <br>
+          @keyframes spin { form { transform: rotate(0deg); } to { transform: 360deg); } }</li>
+      </ul>
+    </li>
+
+  </ul>
+
+  <h2><u>JavaScript Novice to Ninja</u> Ch 14 HTML5 APIs</h2>
+
+  <ul>
+    <li>
+      <h3>HTML5</h3>
+      <ul>
+        <li>caniuse.com</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>The Data-Attribute</h3>
+        <li>data-powers = 'flight superSpeed'<br>
+          data-rating = '5'<br>
+          data-dropdown<br>
+          data-user = 'DAZ'<br>
+          data-max-length = '32'
+        </li>
+        <li>
+          <div id='hero' data-powers='flight superSpeed'>Superman</div>
+        </li>
+        <li>const superman = document.getElementById('hero');<br>
+          const powers = superman.dataset.powers;<br>
+          //'flight superSpeed'</li>
+        <li>hyphens would be replaced with camel case</li>
+        <li>const maxLength = Number(element.dataset.maxLength); //conver to a number</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>HTML5 APIs</h3>
+        <li>
+          <h4>HTML5 Web Storage</h4> // more storage than cookies and not shared
+        </li>
+        <li>localStorage.setItem('name, 'Walter White');<br>
+          localStorage.getItem('name'); //'Walter White'<br>
+          localStorage.name = 'Heisenberg';<br>
+          console.log(localStorage.name);<br>
+          //'Heisenberg'<br>
+          localStorage.removeItem('name');<br>
+          delete localStorage.name;<br>
+          localStorage.clear();
+        <li>
+        <li>addEventListener('storage', (event) => {<br>
+          console.log(`The ${event.key} was updated from ${event.oldValue} to ${event.newValue} and saved in
+          ${event.storageArea}`)}, false);</li>
+        <li>localStorage.setItem('superman', JSON.stringify(hero);<br>
+          superman = JSON.parse(localStorage.getItem('superman'));</li>
+        <li>
+          <h4>Geolocation</h4>//location of the device
+        </li>
+        <li>navigator.geolocation.getCurrentPosition(youAreHere);<br>
+          function youAreHere(position) {<br>
+          console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);<br>
+          }</li>
+        <li>position.speed, position.altitude, position.heading, position.timestamp</li>
+        <li>these all have an .accuracy property</li>
+        <li>const id = navigator.geolocation.watchPosition(youAreHere);<br>
+          navigator.geolocation.clearWatch(id);</li>
+        <li>
+          <h4>Web Workers //allow proesses to be run in the background</h4>
+        </li>
+        <li>const worker = new Worker('task.js');<br>
+          worker.postMessage('Hello');<br>
+          self.postMessage('Finished');<br>
+          worker.addEventListner('message', (event) => {<br>
+          console.log(event.data);<br>
+          }, false);<br>
+          worker.terminate();<br>
+          self.close();</li>
+        <li>see code</li>
+        <li>
+          <h4>Websockets //allows two-way communication with a server--also known as push messaging</h4>
+        </li>
+        <li>see code</li>
+        <li>
+          <h4>Notifications //show messages using the system's notifications</h4>
+        </li>
+        <li>see code</li>
+        <li>
+          <h4>Multimedia</h4>
+        </li>
+        <li><audio src="/song.mp3" controls>Your browser does not support the audio element.</audio></li>
+        <li><video src='http://movie.mp4' controls>Your borwser does not support the video element</video></li>
+        <li>controls is used to display the browser's native controls such as play, pause, and volume control</li>
+        <li>const video = document.getElementsByTagName('video')[0];</li>
+        <li>video.play();, video.pause();, video.volume = 0.9; video.muted = true;, video.currentTime += 10; //jumps
+          forward 10 seconds// video.playbackRate = 8; //fast-forward at 8 times as fast// video.loop = true;,
+          viedo.duration; //returns how long it is</li>
+        <li>video.addEventListner('loadedmetadata', () => {console.log(video.duration);});</li>
+        <li>video.addEventListner('pause', () => {console.log('The video has been paused'); }, false)</li>
+      </ul>
+    </li>
+
+    <li>
+      <ul>
+        <h3>Drawing with Canvas</h3>
+        <li>see code</li>
+      </ul>
+    </li>
+
+    <li>A shim or polyfill is a piece of code that adds support of missing features to
+      older browsers.</li>
+  </ul>
+
+  <h2>Questions</h2>
+  <ul>
+    <li>How do you clear a setInterval? the text was unclear. can you set it to a timeout?</li>
+    <li>Why doesn't the setInterval() work in my code?</li>
+  </ul>
+  <a href="index.html"><button>Back to Week 9 Folder</button></a>
+
+</body>
+
+</html>
