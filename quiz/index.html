@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Quiz</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Sigmar+One&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Welcome to Multi Quiz</h1>
+  <div class="curtain hidden">
+    <div class="curtain-wrapper">
+      <input type="checkbox" checked>
+
+      <div class="curtain-panel curtain-panel-left">
+        <h1>Click to reveal&nbsp;</h1>
+      </div>
+
+      <div class="curtain-content">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/trophy.svg">
+        <p>"Icon made by Freepik from <a href='www.flaticon.com'>www.flaticon.com"</a></p>
+        <h2>Achievement Unlocked!</h2>
+      </div>
+
+      <div class="curtain-panel curtain-panel-right">
+        <h1>a special reward...</h1>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="difficulty">
+    <h2>Choose your difficulty:</h2>
+    <a class="btn" id="easy">Easy</a class="btn">
+    <a class="btn" id="medium">Medium</a class="btn">
+    <a class="btn" id="hard">Hard</a class="btn">
+  </div>
+
+  <div id='question' class="hidden">
+    <div class="question-grid">
+    <div id="questionDiv"></div>
+    <div class="answerDiv">
+      <p class="choiceNumber"><b>1.</b></p>
+      <p class="choice" id="choice1" data-number="1">is it this one</p>
+    </div>
+    <div class="answerDiv">
+      <p class="choiceNumber"><b>2.</b></p>
+      <p class="choice" id="choice2" data-number="2">is it this one</p>
+    </div>
+    <div class="answerDiv">
+      <p class="choiceNumber"><b>3.</b></p>
+      <p class="choice" id="choice3" data-number="3">is it this one</p>
+    </div>
+    <div class="answerDiv">
+      <p class="choiceNumber"><b>4.</b></p>
+      <p class="choice" id='choice4' data-number="4">is it this one</p>
+    </div>
+
+    <a class="btn" id="next">Next</a class="btn">
+  </div></div>
+
+  <script type='module' src="js/main.js"></script>
+</body>
+
+</html>

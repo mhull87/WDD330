@@ -1,0 +1,9 @@
+.question-grid {
+  display: grid;
+  max-width: fit-content;
+  place-items: start;
+}
+
+#next {
+  place-self: center;
+}

@@ -1,0 +1,176 @@
+.question-grid {
+  display: -ms-grid;
+  display: grid;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  place-items: start;
+}
+
+#next {
+  place-self: center;
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: "Poiret One", cursive;
+  font-size: 24px;
+  margin: auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Sigmar One", cursive;
+}
+
+.btn {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #79bbff), to(#378de5));
+  background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  background-color: #79bbff;
+  border: 1px solid #337bc4;
+  border-radius: 5px;
+  -webkit-box-shadow: 3px 4px 0 #1564ad;
+          box-shadow: 3px 4px 0 #1564ad;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Sigmar One", cursive;
+  font-size: 17px;
+  padding: 12px 44px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #528ecc;
+}
+
+.btn:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #378de5), to(#79bbff));
+  background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+  background-color: #378de5;
+}
+
+.btn:active {
+  position: relative;
+  top: 8px;
+}
+
+p {
+  display: inline;
+}
+
+.answerDiv {
+  margin: 2rem;
+}
+
+#question {
+  margin: auto;
+  max-width: 400px;
+}
+
+body {
+  margin: auto;
+  overflow: hidden;
+}
+
+.curtain {
+  height: 100vh;
+  width: 100%;
+}
+
+.curtain-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.curtain-wrapper input[type=checkbox] {
+  cursor: pointer;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.curtain-wrapper input[type=checkbox]:checked ~ div.curtain-panel-left {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.curtain-wrapper input[type=checkbox]:checked ~ div.curtain-panel-right {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.curtain-panel {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffa500;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+  height: 100vh;
+  position: relative;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+  width: 50%;
+  z-index: 2;
+}
+
+.curtain-panel-left {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.curtain-panel-right {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.curtain-content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #333;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.curtain-content img {
+  width: 20%;
+}
+
+body {
+  background-color: aquamarine;
+}
+
+h1 {
+  font-size: 2rem;
+}
+/*# sourceMappingURL=styles.css.map */

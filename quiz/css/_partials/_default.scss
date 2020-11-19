@@ -1,0 +1,56 @@
+@import './variables';
+
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: $body-font;
+  font-size: 24px;
+  margin: auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+h1 {
+  font-family: $heading-font;
+}
+
+.btn {
+  background: linear-gradient(to bottom, $btn-color 5%, $btn-gradient 100%);
+  background-color: $btn-color;
+  border: 1px solid $btn-border;
+  border-radius: 5px;
+  box-shadow: 3px 4px 0 $btn-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $heading-font;
+  font-size: 17px;
+  padding: 12px 44px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 $btn-shadow;
+
+  &:hover {
+    background: linear-gradient(to bottom, $btn-gradient 5%, $btn-color 100%);
+    background-color: $btn-gradient;
+  }
+
+  &:active {
+    position: relative;
+    top: 8px;
+  }
+}
+
+p {
+  display: inline;
+}
+
+.answerDiv {
+  margin: 2rem;
+}
+
+#question {
+  margin: auto;
+  max-width: 400px;
+}
