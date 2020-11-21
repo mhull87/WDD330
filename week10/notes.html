@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Week 10 Notes</h1>
+  <h2><u>Validating Forms</u> Client-side form validation</h2>
+  <ul>
+    <h3>HTML5 Validation</h3>
+    <li>required</li>
+    <li>minlength and maxlength for texual data</li>
+    <li>min and max for numerical input</li>
+    <li>type specifies number, email, or other types</li>
+    <li>pattern regular expression (regex)</li>
+    <li>CSS :valid, :invalid, :out-of-range</li>
+    <li>see code</li>
+    <h4>Regular Espression</h4>
+    <ul>
+      <li>a — Matches one character that is a (not b, not aa, and so on).</li>
+      <li>abc — Matches a, followed by b, followed by c.</li>
+      <li>ab?c—Matches a, optionally followed by a single b, followed by c. ( ac or abc)</li>
+      <li>ab*c—Matches a, optionally followed by any number of bs, followed by c. ( ac , abc, abbbbbc, and so on).</li>
+      <li>a|b — Matches one character that is a or b.</li>
+      <li>abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on).</li>
+      <li>see code</li>
+    </ul>
+    <h4>Validating forms using JavaScript</h4>
+    <ul>
+      <li>constraint validation API</li>
+      <li>validationMessage returns localized message describing the validation constraints that the control doesn't satisfy</li>
+      <li>validity returns a ValidityState object that contains several properties describing the validity state of the element</li>
+      <li>patternMismatch</li>
+      <li>tooLong</li>
+      <li>tooShort</li>
+      <li>rangeOverflow</li>
+      <li>rangeUnderflow</li>
+      <li>typeMismatch</li>
+      <li>valid</li>
+      <li>valueMissing</li>
+      <li>willValidate</li>
+      <li>checkValidity()</li>
+      <li>setCustomValidity(message)</li>
+      <li>see code</li>
+      <li>novalidate turns off the browser's automatic validation</li>
+    </ul>
+  </ul>
+
+  <h2>Using Fetch</h2>
+  <ul>
+    <li>see code</li>
+    <li>fetch requests are controlled by the connect-src directive of Content Security Policy</li>
+    <li>//to cause browsers to sent a request with credentials included add<br>
+      fetch('https://example.com', {<br>
+        credentials: 'include'<br>
+      });<br><br>
+      
+      //if you only want to send credentials if the request URL is on the same origin as the calling script, add<br>
+      //the calling script is on the origin 'https://example.com'<br>
+      fetch('https://example.com', {<br>
+        credentials: 'same-origin'<br>
+      });<br><br>
+      
+      //to instead ensure browsers don't include credentials in the request, use<br>
+      fetch('http://example.com', {<br>
+        credentials: 'omit'<br>
+      });</li>
+      <li>Upload JSON data: use fetch() to POST JSON-encoded data</li>
+      <li>see code</li>
+      <li>Upload a file: <input type='file' />, input element, FormData() and fetch()</li>
+      <li>see code</li>
+      <li>Upload multiple files with <input type='file' multiple /></li>
+      <li>see code</li>
+      <li>check that the fetch was successful</li>
+      <li>see code</li>
+      <li>Headers interface allows your to create your own headers object via the Headers() constructor</li>
+      <li>Guard affects which mutation operations are allowed on the headers object</li>
+      <li>response objects</li>
+      <li>Response.status returns an integer with the response status code</li>
+      <li>Response.statusText returns a string of the status code</li>
+      <li>Response.ok shorthand returns boolean</li>
+      <li>body</li>
+      <li>ArrayBuffer</li>
+      <li>ArrayBufferView</li>
+      <li>Blob/File</li>
+      <li>string</li>
+      <li>URLSearchParams</li>
+      <li>FormData</li>
+
+  </ul>
+
+  <h2>Questions</h2>
+  <ul>
+  </ul>
+  <a href="index.html"><button>Back to Week 10 Folder</button></a>
+
+</body>
+
+</html>

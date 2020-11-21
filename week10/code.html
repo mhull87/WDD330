@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    .form1 input:invalid {
+      border: 2px dashed red;
+    }
+
+    .form1 input:invalid:required {
+      background-image: linear-gradient(to right, pink, lightgreen);
+    }
+
+    .form1 input:valid {
+      border: 2px solid black;
+    }
+
+    .form2 form {
+      font: 1em sans-serif;
+      max-width: 320px;
+    }
+
+    .form2 p>label {
+      display: block;
+    }
+
+    .form2 input[type="text"],
+    .form2 input[type="email"],
+    .form2 input[type="number"],
+    .form2 textarea,
+    .form2 fieldset {
+      width: 100%;
+      border: 1px solid #333;
+      box-sizing: border-box;
+    }
+
+    .form2 input:invalid {
+      box-shadow: 0 0 5px 1px red;
+    }
+
+    .form2 input:focus:invalid {
+      box-shadow: none;
+    }
+
+    .form4 {
+      font: 1em sans-serif;
+      width: 200px;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .form4 p * {
+      display: block;
+    }
+
+    .form4 input[type=email] {
+      -webkit-appearance: none;
+      appearance: none;
+
+      width: 100%;
+      border: 1px solid #333;
+      margin: 0;
+
+      font-family: inherit;
+      font-size: 90%;
+
+      box-sizing: border-box;
+    }
+
+    /* This is our style for the invalid fields */
+    .form4 input:invalid {
+      border-color: #900;
+      background-color: #FDD;
+    }
+
+    .form4 input:focus:invalid {
+      outline: none;
+    }
+
+    /* This is the style of our error messages */
+    .form4 .error {
+      width: 100%;
+      padding: 0;
+
+      font-size: 80%;
+      color: white;
+      background-color: #900;
+      border-radius: 0 0 5px 5px;
+
+      box-sizing: border-box;
+    }
+
+    .form4 .error.active {
+      padding: 0.3em;
+    }
+
+    .form5 {
+      font: 1em sans-serif;
+      width: 200px;
+      padding: 0;
+      margin: 0 auto;
+    }
+
+    .form5 {
+      max-width: 200px;
+    }
+
+    .form5 p * {
+      display: block;
+    }
+
+    .form5 input.mail {
+      -webkit-appearance: none;
+
+      width: 100%;
+      border: 1px solid #333;
+      margin: 0;
+
+      font-family: inherit;
+      font-size: 90%;
+
+      box-sizing: border-box;
+    }
+
+    /* This is our style for the invalid fields */
+    .form5 input.invalid {
+      border-color: #900;
+      background-color: #FDD;
+    }
+
+    .form5 input:focus.invalid {
+      outline: none;
+    }
+
+    /* This is the style of our error messages */
+    .form5 .error {
+      width: 100%;
+      padding: 0;
+
+      font-size: 80%;
+      color: white;
+      background-color: #900;
+      border-radius: 0 0 5px 5px;
+      box-sizing: border-box;
+    }
+
+    .form5 .error.active {
+      padding: 0.3em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form class="form1">
+    <div>
+      <label for="choose">Would you prefer a banana or a cherry?</label>
+      <input type="text" id="choose" name="i_like" required minlength="6" maxlength="6">
+    </div>
+    <div>
+      <label for="number">How many would you like?</label>
+      <input type="number" id="number" name="amount" value="1" min="1" max="10">
+    </div>
+    <div>
+      <button>Submit</button>
+    </div>
+  </form>
+
+  <form class="form2">
+    <p>
+      <fieldset>
+        <legend>Do you have a driver's license?<abbr title="This field is mandatory" aria-label="required">*</abbr>
+        </legend>
+        <!-- While only one radio button in a same-named group can be selected at a time,
+             and therefore only one radio button in a same-named group having the "required"
+             attribute suffices in making a selection a requirement -->
+        <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label>
+        <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+      </fieldset>
+    </p>
+    <p>
+      <label for="n1">How old are you?</label>
+      <!-- The pattern attribute can act as a fallback for browsers which
+           don't implement the number input type but support the pattern attribute.
+           Please note that browsers that support the pattern attribute will make it
+           fail silently when used with a number field.
+           Its usage here acts only as a fallback -->
+      <input type="number" min="12" max="120" step="1" id="n1" name="age" pattern="\d+">
+    </p>
+    <p>
+      <label for="t1">What's your favorite fruit?<abbr title="This field is mandatory"
+          aria-label="required">*</abbr></label>
+      <input type="text" id="t1" name="fruit" list="l1" required
+        pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+      <datalist id="l1">
+        <option>Banana</option>
+        <option>Cherry</option>
+        <option>Apple</option>
+        <option>Strawberry</option>
+        <option>Lemon</option>
+        <option>Orange</option>
+      </datalist>
+    </p>
+    <p>
+      <label for="t2">What's your e-mail address?</label>
+      <input type="email" id="t2" name="email">
+    </p>
+    <p>
+      <label for="t3">Leave a short message</label>
+      <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+    </p>
+    <p>
+      <button>Submit</button>
+    </p>
+  </form>
+
+  <form class="form3">
+    <label for="mail">I would like you to provide me with an e-mail address:</label>
+    <input type="email" id="mail" name="mail">
+    <button>Submit</button>
+  </form>
+
+  <form novalidate class="form4" id="form4">
+    <p>
+      <label for="mail">
+        <span>Please enter an email address:</span>
+        <input type="email" id="mail2" name="mail" required minlength="8">
+        <span class="error" aria-live="polite"></span>
+      </label>
+    </p>
+    <button>Submit</button>
+  </form>
+
+  <form class="form5">
+    <p>
+      <label for="mail">
+        <span>Please enter an email address:</span>
+        <input type="text" class="mail" id="mail5" name="mail">
+        <span class="error" aria-live="polite"></span>
+      </label>
+    </p>
+    <!-- Some legacy browsers need to have the `type` attribute
+         explicitly set to `submit` on the `button`element -->
+    <button type="submit">Submit</button>
+  </form>
+
+  <br><br><a href="index.html"><button>Back to Week 10 Folder</button></a>
+  <script>
+    const email = document.getElementById("mail");
+
+    email.addEventListener("input", function (event) {
+      if (email.validity.typeMismatch) {
+        email.setCustomValidity("I am expecting an e-mail address!");
+      } else {
+        email.setCustomValidity("");
+      }
+    });
+
+    // There are many ways to pick a DOM node; here we get the form itself and the email
+    // input box, as well as the span element into which we will place the error message.
+    const form = document.querySelector('#form4');
+
+    const email2 = document.getElementById('mail2');
+    const emailError = document.querySelector('#mail2 + span.error');
+
+    email2.addEventListener('input', function (event) {
+      // Each time the user types something, we check if the
+      // form fields are valid.
+
+      if (email2.validity.valid) {
+        // In case there is an error message visible, if the field
+        // is valid, we remove the error message.
+        emailError.innerHTML = ''; // Reset the content of the message
+        emailError.className = 'error'; // Reset the visual state of the message
+      } else {
+        // If there is still an error, show the correct error
+        showError();
+      }
+    });
+
+    form.addEventListener('submit', function (event) {
+      // if the email field is valid, we let the form submit
+
+      if (!email2.validity.valid) {
+        // If it isn't, we display an appropriate error message
+        showError();
+        // Then we prevent the form from being sent by canceling the event
+        event.preventDefault();
+      }
+    });
+
+    function showError() {
+      if (email2.validity.valueMissing) {
+        // If the field is empty
+        // display the following error message.
+        emailError.textContent = 'You need to enter an e-mail address.';
+      } else if (email2.validity.typeMismatch) {
+        // If the field doesn't contain an email address
+        // display the following error message.
+        emailError.textContent = 'Entered value needs to be an e-mail address.';
+      } else if (email2.validity.tooShort) {
+        // If the data is too short
+        // display the following error message.
+        emailError.textContent =
+          `Email should be at least ${ email2.minLength } characters; you entered ${ email.value.length }.`;
+      }
+
+      // Set the styling appropriately
+      emailError.className = 'error active';
+    }
+
+    // There are fewer ways to pick a DOM node with legacy browsers
+    const form5 = document.getElementById('form5');
+    const email5 = document.getElementById('mail5');
+
+    // The following is a trick to reach the next sibling Element node in the DOM
+    // This is dangerous because you can easily build an infinite loop.
+    // In modern browsers, you should prefer using element.nextElementSibling
+    let error = email5;
+    while ((error = error.nextSibling).nodeType != 1);
+
+    // As per the HTML5 Specification
+    const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    // Many legacy browsers do not support the addEventListener method.
+    // Here is a simple way to handle this; it's far from the only one.
+    function addEvent(element, event, callback) {
+      let previousEventCallBack = element["on" + event];
+      element["on" + event] = function (e) {
+        const output = callback(e);
+
+        // A callback that returns `false` stops the callback chain
+        // and interrupts the execution of the event callback.
+        if (output === false) return false;
+
+        if (typeof previousEventCallBack === 'function') {
+          output = previousEventCallBack(e);
+          if (output === false) return false;
+        }
+      }
+    };
+
+    // Now we can rebuild our validation constraint
+    // Because we do not rely on CSS pseudo-class, we have to 
+    // explicitly set the valid/invalid class on our email field
+    addEvent(window, "load", function () {
+      // Here, we test if the field is empty (remember, the field is not required)
+      // If it is not, we check if its content is a well-formed e-mail address.
+      const test = email5.value.length === 0 || emailRegExp.test(email5.value);
+
+      email5.className = test ? "valid" : "invalid";
+    });
+
+    // This defines what happens when the user types in the field
+    addEvent(email5, "input", function () {
+      const test = email5.value.length === 0 || emailRegExp.test(email5.value);
+      if (test) {
+        email5.className = "valid";
+        error.innerHTML = "";
+        error.className = "error";
+      } else {
+        email5.className = "invalid";
+      }
+    });
+
+    // This defines what happens when the user tries to submit the data
+    addEvent(form5, "submit", function () {
+      const test = email5.value.length === 0 || emailRegExp.test(email5.value);
+
+      if (!test) {
+        email5.className = "invalid";
+        error.innerHTML = "I expect an e-mail, darling!";
+        error.className = "error active";
+
+        // Some legacy browsers do not support the event.preventDefault() method
+        return false;
+      } else {
+        email5.className = "valid";
+        error.innerHTML = "";
+        error.className = "error";
+      }
+    });
+
+    fetch('http://example.com/movies.json')
+      .then(response => response.json())
+      .then(data => console.log(data));
+
+    //Example POST method implementation:
+    async function postData(url = '', data = {}) {
+      //Default options are marked with *
+      const response = await fetch(url, {
+        method: 'POST', //*GET, POST, PUT, DELETE, etc.
+        mode: 'cors', //no-cors, *cors, same-origin
+        cache: 'no-cache', //*default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', //include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json'
+          //'Content-type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', //manual, *follow, error
+        referrerPolicy: 'no-referrer', //no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-when-cross-origin, unsafe-url
+        body: JSON.stringify(data) //body data type must match 'Content-Type header'
+      });
+      return response.json(); //parses JSON response into native JavaScript objects
+    }
+
+    postData('https://example.com/answer', {
+        answer: 42
+      })
+      .then(data => {
+        console.log(data); //JSON data parsed by `data.json()` call
+      });
+
+    const data = {
+      username: 'example'
+    };
+
+    fetch('https://example.com/profile', {
+        method: 'POST', //or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+    const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+
+    formData.append('username', 'abc123');
+    formData.append('avatar', fileField.files[0]);
+
+    fetch('https://example.com/profile/avatar', {
+        method: 'PUT',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(result => {
+        console.log('Success:', result);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+      fetch('flowers.jpg')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.blob();
+  })
+  .then(myBlob => {
+    myImage.src = URL.createObjectURL(myBlob);
+  })
+  .catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+  });    
+  </script>
+</body>
+
+</html>

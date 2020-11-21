@@ -1,3 +1,4 @@
+const url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2019-01-01&endtime=2019-02-02'
 
 export function getJSON(url) {
   return fetch(url)
@@ -15,6 +16,6 @@ export function getJSON(url) {
 
 export const getLocation = function(options) {
   return new Promise(function(resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options);
+      navigator.geolocation.getCurrentPosition(resolve, reject, options);
   });
 };
