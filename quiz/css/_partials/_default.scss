@@ -52,5 +52,32 @@ p {
 
 #question {
   margin: auto;
-  max-width: 400px;
+  max-width: 600px;
+}
+
+#progress_container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 600px;
+}
+
+#progress_counter {
+  color: $btn-box;
+  font-weight: bolder;
+}
+
+#progress_bar {
+  border: .1rem solid $btn-box;
+  height: 2rem;
+  margin: auto;
+  text-align: center;
+  width: 20rem;
+}
+
+#progress_bar_full {
+  background-color: $btn-box;
+  height: 2rem;
+  width: 10%;
 }

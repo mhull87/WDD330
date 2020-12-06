@@ -66,7 +66,40 @@ p {
 
 #question {
   margin: auto;
-  max-width: 400px;
+  max-width: 600px;
+}
+
+#progress_container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  max-width: 600px;
+}
+
+#progress_counter {
+  color: #1564ad;
+  font-weight: bolder;
+}
+
+#progress_bar {
+  border: 0.1rem solid #1564ad;
+  height: 2rem;
+  margin: auto;
+  text-align: center;
+  width: 20rem;
+}
+
+#progress_bar_full {
+  background-color: #1564ad;
+  height: 2rem;
+  width: 10%;
 }
 
 body {
