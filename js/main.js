@@ -37,6 +37,10 @@ const links = [{
   {
     label: 'Week 10',
     url: 'week10/index.html'
+  },
+  {
+    label: 'Final',
+    url: 'quiz/index.html'
   }
 ];
 
