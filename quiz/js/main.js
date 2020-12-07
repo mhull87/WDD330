@@ -1,5 +1,4 @@
 import questions from './questions.js';
-import score from './score.js';
 
 document.querySelector('#easy').onclick = easyAPI;
 document.querySelector('#medium').onclick = medAPI;
@@ -60,5 +59,3 @@ function showQuestion() {
   document.getElementById('progress_question').classList.remove('hidden');
   document.getElementById('progress_bar').classList.remove('hidden');
 }
-
-score();

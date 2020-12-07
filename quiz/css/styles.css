@@ -25,6 +25,9 @@ body {
 
 h1 {
   font-family: "Sigmar One", cursive;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
 }
 
 .btn {
@@ -58,6 +61,43 @@ h1 {
 
 p {
   display: inline;
+}
+
+.choiceNumber {
+  background-color: #79bbff;
+  color: white;
+  padding: 1rem;
+}
+
+.answerDiv {
+  padding: .5rem 0;
+}
+
+.answerDiv:hover {
+  -webkit-transform: translateY(5px);
+          transform: translateY(5px);
+}
+
+.choice {
+  padding: 1rem;
+  width: 100%;
+}
+
+.choice:hover {
+  border: 1px dotted #79bbff;
+  cursor: pointer;
+}
+
+#choiceein {
+  padding: 1rem 1.35rem;
+}
+
+#choicedri {
+  padding: 1rem 1.1rem;
+}
+
+#choicevier {
+  padding: 1rem 1.15rem;
 }
 
 .answerDiv {
@@ -100,6 +140,11 @@ p {
   background-color: #1564ad;
   height: 2rem;
   width: 10%;
+}
+
+.score {
+  font-size: 5rem;
+  margin: 2rem;
 }
 
 body {
@@ -201,9 +246,5 @@ body {
 
 body {
   background-color: aquamarine;
-}
-
-h1 {
-  font-size: 2rem;
 }
 /*# sourceMappingURL=styles.css.map */

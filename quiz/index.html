@@ -13,7 +13,7 @@
 
 <body>
   <h1>Welcome to Multi Quiz</h1>
-  <div class="curtain hidden">
+  <div class="curtain hidden" id="curtain">
     <div class="curtain-wrapper">
       <input type="checkbox" checked>
 
@@ -22,6 +22,7 @@
       </div>
 
       <div class="curtain-content">
+        <div id="score" class="score hidden"></div>
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/trophy.svg">
         <p>"Icon made by Freepik from <a href='www.flaticon.com'>www.flaticon.com"</a></p>
         <h2>Achievement Unlocked!</h2>
@@ -34,48 +35,49 @@
     </div>
   </div>
 
-  <div id="progress_container">
-    <h3 id="progress_question" class="hidden">Question</h3>
-    <div id="progress_bar" class="hidden">
-      <div id="progress_bar_full"></div>
+  <div id="maincontainer">
+    <div id="progress_container">
+      <h3 id="progress_question" class="hidden">Question</h3>
+      <div id="progress_bar" class="hidden">
+        <div id="progress_bar_full"></div>
+      </div>
+      <div id="progress_counter"></div>
     </div>
-    <div id="progress_counter"></div>
-  </div>
 
-  <div id="score" class=""></div>
 
-  <div id="difficulty">
-    <h2>Choose your difficulty:</h2>
-    <a class="btn" id="easy">Easy</a class="btn">
-    <a class="btn" id="medium">Medium</a class="btn">
-    <a class="btn" id="hard">Hard</a class="btn">
-  </div>
-
-  <div id='question' class="hidden">
-    <div class="question-grid">
-      <div id="questionDiv"></div>
-      <div class="answerDiv">
-        <p class="choiceNumber"><b>1.</b></p>
-        <p class="choice" id="choice1" data-number="1">is it this one</p>
-      </div>
-      <div class="answerDiv">
-        <p class="choiceNumber"><b>2.</b></p>
-        <p class="choice" id="choice2" data-number="2">is it this one</p>
-      </div>
-      <div class="answerDiv">
-        <p class="choiceNumber"><b>3.</b></p>
-        <p class="choice" id="choice3" data-number="3">is it this one</p>
-      </div>
-      <div class="answerDiv">
-        <p class="choiceNumber"><b>4.</b></p>
-        <p class="choice" id='choice4' data-number="4">is it this one</p>
-      </div>
-
+    <div id="difficulty">
+      <h2>Choose your difficulty:</h2>
+      <a class="btn" id="easy">Easy</a class="btn">
+      <a class="btn" id="medium">Medium</a class="btn">
+      <a class="btn" id="hard">Hard</a class="btn">
     </div>
-    <a class="btn" id="next">Next</a class="btn">
 
+    <div id='question' class="hidden">
+      <div class="question-grid">
+        <div id="questionDiv"></div>
+        <div class="answerDiv" data-number="1">
+          <p class="choiceNumber" id="choiceein" data-number="1"><b data-number="1">1.</b></p>
+          <p class="choice" id="choice1" data-number="1">is it this one</p>
+        </div>
+        <div class="answerDiv" data-number="2">
+          <p class="choiceNumber" id="choicezwei" data-number="2"><b data-number="2">2.</b></p>
+          <p class="choice" id="choice2" data-number="2">is it this one</p>
+        </div>
+        <div class="answerDiv" data-number="3">
+          <p class="choiceNumber" id="choicedri" data-number="3"><b>3.</b data-number="3"></p>
+          <p class="choice" id="choice3" data-number="3">is it this one</p>
+        </div>
+        <div class="answerDiv" data-number="4">
+          <p class="choiceNumber" id="choicevier" data-number="4"><b data-number="4">4.</b></p>
+          <p class="choice" id='choice4' data-number="4">is it this one</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden" id="btndiv">
+      <a class="btn" id="next">Next</a class="btn">
+    </div>
   </div>
-
   <script type='module' src="js/main.js"></script>
 </body>
 
