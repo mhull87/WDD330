@@ -1,5 +1,6 @@
 import progressbar from './progressbar.js';
 import score from './score.js';
+import endphrase from './ending.js';
 
 const choices = Array.from(document.getElementsByClassName('choice'));
 
@@ -41,7 +42,6 @@ function displayQuestion1(response) {
       })
     })
   }
-
 
   let next = document.getElementById('next');
   next.addEventListener('click', () => {
@@ -388,5 +388,7 @@ function displayQuestion10(response) {
     document.getElementById('maincontainer').classList.add('hidden');
     document.getElementById('score').classList.remove('hidden');
     document.getElementById('curtain').classList.remove('hidden');
+
+    endphrase();
   })
 }

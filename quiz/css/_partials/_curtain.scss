@@ -6,7 +6,7 @@ body {
 }
 
 .curtain {
-  height: 100vh;
+  height: 80vh;
   width: 100%;
 
   &-wrapper {
@@ -20,7 +20,7 @@ body {
       position: absolute;
       top: 0;
       width: 100%;
-      z-index: 3;
+      z-index: 4;
 
       // When the checkbox is checked...
       &:checked {
@@ -48,7 +48,7 @@ body {
     position: relative;
     transition: 1s ease-out;
     width: 50%;
-    z-index: 2;
+    z-index: 3;
 
     &-left {
       justify-content: flex-end;
@@ -79,4 +79,13 @@ body {
       width: 20%;
     }
   }
+}
+
+.attribution {
+  font-size: .4rem;
+}
+
+#playagain {
+  margin-bottom: 1rem;
+  z-index: 2;
 }

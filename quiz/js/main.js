@@ -4,7 +4,6 @@ document.querySelector('#easy').onclick = easyAPI;
 document.querySelector('#medium').onclick = medAPI;
 document.querySelector('#hard').onclick = hardAPI;
 
-
 function easyAPI() {
   hideDifficulty();
   showQuestion();
