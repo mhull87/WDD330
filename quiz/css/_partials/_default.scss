@@ -19,6 +19,11 @@ h1 {
   padding: 0;
 }
 
+h2 {
+  font-family: $heading-font;
+  font-size: 1.5rem;
+}
+
 .btn {
   background: linear-gradient(to bottom, $btn-color 5%, $btn-gradient 100%);
   background-color: $btn-color;
@@ -122,6 +127,10 @@ p {
 }
 
 .score {
-  font-size: 5rem;
+  font-size: 2rem;
   margin: 2rem;
+}
+
+.scoretext {
+  display: flex;
 }

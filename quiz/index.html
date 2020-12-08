@@ -18,11 +18,16 @@
       <input type="checkbox" checked>
 
       <div class="curtain-panel curtain-panel-left">
-        <h1>Click to reveal&nbsp;</h1>
+        <h2>Click to reveal&nbsp;</h2>
       </div>
 
       <div class="curtain-content">
-        <div id="score" class="score hidden"></div>
+        <div id='scorediv' class="score hidden">
+          <div class="scoretext">Score:&nbsp;
+            <div id="score"></div>
+            &nbsp;/&nbsp;10
+          </div>
+        </div>
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/trophy.svg">
         <p class='attribution'>"Icon made by Freepik from <a href='www.flaticon.com'>www.flaticon.com"</a></p>
         <h2 id="endphrase">Achievement Unlocked!</h2>
@@ -30,7 +35,7 @@
       </div>
 
       <div class="curtain-panel curtain-panel-right">
-        <h1>your score...</h1>
+        <h2>your score...</h2>
       </div>
     </div>
   </div>

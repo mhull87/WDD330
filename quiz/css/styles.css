@@ -30,6 +30,11 @@ h1 {
   padding: 0;
 }
 
+h2 {
+  font-family: "Sigmar One", cursive;
+  font-size: 1.5rem;
+}
+
 .btn {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #79bbff), to(#378de5));
   background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
@@ -143,8 +148,14 @@ p {
 }
 
 .score {
-  font-size: 5rem;
+  font-size: 2rem;
   margin: 2rem;
+}
+
+.scoretext {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body {
@@ -153,7 +164,7 @@ body {
 }
 
 .curtain {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
 }
 
@@ -164,10 +175,11 @@ body {
 
 .curtain-wrapper input[type=checkbox] {
   cursor: pointer;
-  height: 100%;
+  height: 70%;
   opacity: 0;
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   z-index: 4;
 }
@@ -230,13 +242,11 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 1rem 0;
+  padding-top: 5rem;
   position: absolute;
   text-align: center;
   width: 100%;
+  max-width: 900px;
   z-index: 1;
 }
 
