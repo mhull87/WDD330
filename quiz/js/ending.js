@@ -1,4 +1,4 @@
-import progress_counter from './main';
+import reset from './reset.js';
 
 const endingscore = document.getElementById('score').innerText;
 const score = parseInt(endingscore);
@@ -18,13 +18,4 @@ export default function endphrase() {
   }
 
   document.querySelector('#playagain').onclick = reset;
-}
-
-function reset() {
-  document.getElementById('curtain').classList.add('hidden');
-  document.getElementById('maincontainer').classList.remove('hidden');
-  document.getElementById('difficulty').classList.remove('hidden');
-  progress_counter = 1;
-  document.getElementById('progress_container').classList.add('hidden');
-  document.getElementById('question').classList.add('hidden');
 }

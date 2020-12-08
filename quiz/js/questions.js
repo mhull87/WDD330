@@ -1,8 +1,7 @@
 import progressbar from './progressbar.js';
-import score from './score.js';
 import endphrase from './ending.js';
+import checkanswer from './answer.js';
 
-const choices = Array.from(document.getElementsByClassName('choice'));
 
 export default function displayQuestions(response) {
   displayQuestion1(response);
@@ -24,32 +23,13 @@ function displayQuestion1(response) {
 
   progressbar();
 
+  checkanswer(answer);
 
-  checkanswer(response);
+  document.getElementById('next').onclick = next_question;
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[0].correct_answer) {
-
-          score();
-        }
-
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
-  }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    document.getElementById('question').classList.remove('hidden');
-    document.getElementById('btndiv').classList.add('hidden');
-
+  function next_question() {
     displayQuestion2(response);
-  })
+  }
 }
 
 function displayQuestion2(response) {
@@ -67,28 +47,13 @@ function displayQuestion2(response) {
 
   progressbar();
 
-  checkanswer(response);
+  checkanswer(answer);
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[1].correct_answer) {
+  document.getElementById('next').onclick = next_question;
 
-          score();
-        }
-
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion3(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion3(response)
-  })
 }
 
 function displayQuestion3(response) {
@@ -104,29 +69,15 @@ function displayQuestion3(response) {
   document.getElementById('choice3').innerHTML = wrong2;
   document.getElementById('choice4').innerHTML = wrong3;
 
+  progressbar();
 
-  checkanswer(response);
+  checkanswer(answer);
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[2].correct_answer) {
+  document.getElementById('next').onclick = next_question;
 
-          score();
-        }
-
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion4(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion4(response)
-  })
 }
 
 function displayQuestion4(response) {
@@ -142,28 +93,15 @@ function displayQuestion4(response) {
   document.getElementById('choice3').innerHTML = wrong2;
   document.getElementById('choice4').innerHTML = wrong3;
 
-  checkanswer(response);
+  progressbar();
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[0].correct_answer) {
+  checkanswer(answer);
 
-          score();
-        }
+  document.getElementById('next').onclick = next_question;
 
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion5(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion5(response)
-  })
 }
 
 function displayQuestion5(response) {
@@ -179,28 +117,15 @@ function displayQuestion5(response) {
   document.getElementById('choice3').innerHTML = wrong2;
   document.getElementById('choice4').innerHTML = answer;
 
-  checkanswer(response);
+  progressbar();
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[4].correct_answer) {
+  checkanswer(answer);
 
-          score();
-        }
+  document.getElementById('next').onclick = next_question;
 
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion6(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion6(response)
-  })
 }
 
 function displayQuestion6(response) {
@@ -216,28 +141,15 @@ function displayQuestion6(response) {
   document.getElementById('choice3').innerHTML = answer;
   document.getElementById('choice4').innerHTML = wrong3;
 
-  checkanswer(response);
+  progressbar();
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[5].correct_answer) {
+  checkanswer(answer);
 
-          score();
-        }
+  document.getElementById('next').onclick = next_question;
 
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion7(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion7(response)
-  })
 }
 
 function displayQuestion7(response) {
@@ -253,28 +165,15 @@ function displayQuestion7(response) {
   document.getElementById('choice3').innerHTML = wrong2;
   document.getElementById('choice4').innerHTML = wrong3;
 
-  checkanswer(response);
+  progressbar();
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[6].correct_answer) {
+  checkanswer(answer);
 
-          score();
-        }
+  document.getElementById('next').onclick = next_question;
 
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion8(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion8(response)
-  })
 }
 
 function displayQuestion8(response) {
@@ -290,28 +189,15 @@ function displayQuestion8(response) {
   document.getElementById('choice3').innerHTML = answer;
   document.getElementById('choice4').innerHTML = wrong3;
 
-  checkanswer(response);
+  progressbar();
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[7].correct_answer) {
+  checkanswer(answer);
 
-          score();
-        }
+  document.getElementById('next').onclick = next_question;
 
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion9(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion9(response)
-  })
 }
 
 function displayQuestion9(response) {
@@ -327,28 +213,15 @@ function displayQuestion9(response) {
   document.getElementById('choice3').innerHTML = wrong2;
   document.getElementById('choice4').innerHTML = wrong3;
 
-  checkanswer(response);
+  progressbar();
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[8].correct_answer) {
+  checkanswer(answer);
 
-          score();
-        }
+  document.getElementById('next').onclick = next_question;
 
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
+  function next_question() {
+    displayQuestion10(response);
   }
-
-  let next = document.getElementById('next');
-  next.addEventListener('click', () => {
-    displayQuestion10(response)
-  })
 }
 
 function displayQuestion10(response) {
@@ -364,31 +237,20 @@ function displayQuestion10(response) {
   document.getElementById('choice3').innerHTML = answer;
   document.getElementById('choice4').innerHTML = wrong3;
 
-  checkanswer(response);
+  progressbar();
 
-  function checkanswer(response) {
-    choices.forEach(choice => {
-      choice.addEventListener('click', e => {
-        const answerChoice = e.target;
-        const selectedAnswer = answerChoice.innerText;
-        if (selectedAnswer == response.results[9].correct_answer) {
-
-          score();
-        }
-
-        document.getElementById('question').classList.add('hidden');
-        document.getElementById('btndiv').classList.remove('hidden');
-      })
-    })
-  }
+  checkanswer(answer);
 
   let next = document.getElementById('next');
   next.innerText = 'Finish';
-  next.addEventListener('click', () => {
+
+  next.onclick = end;
+
+  function end() {
     document.getElementById('maincontainer').classList.add('hidden');
     document.getElementById('score').classList.remove('hidden');
     document.getElementById('curtain').classList.remove('hidden');
 
     endphrase();
-  })
+  }
 }
