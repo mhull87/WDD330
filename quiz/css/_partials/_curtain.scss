@@ -13,13 +13,13 @@ body {
     height: 100%;
     width: 100%;
 
-    input[type=checkbox] {
+    input[type='checkbox'] {
       cursor: pointer;
       height: 70%;
+      left: 0;
       opacity: 0;
       position: absolute;
       top: 0;
-      left: 0;
       width: 100%;
       z-index: 4;
 
@@ -41,8 +41,8 @@ body {
 
   &-panel {
     align-items: center;
-    background: #ffa500;
-    color: #fff;
+    background: $panel-color;
+    color: $text;
     display: flex;
     float: left;
     height: 100vh;
@@ -64,16 +64,16 @@ body {
 
   &-content {
     align-items: center;
-    background: #333;
-    color: #fff;
+    background: $content-background;
+    color: $text;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    max-width: 900px;
     padding-top: 5rem;
     position: absolute;
     text-align: center;
     width: 100%;
-    max-width: 900px;
     z-index: 1;
 
     img {
@@ -86,7 +86,7 @@ body {
   font-size: .4rem;
 }
 
-#playagain {
+.playagain {
   margin-bottom: 1rem;
   z-index: 2;
 }

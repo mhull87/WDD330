@@ -30,7 +30,7 @@ h2 {
   border: 1px solid $btn-border;
   border-radius: 5px;
   box-shadow: 3px 4px 0 $btn-box;
-  color: #fff;
+  color: $text;
   cursor: pointer;
   display: inline-block;
   font-family: $heading-font;
@@ -56,7 +56,7 @@ p {
 
 .choiceNumber {
   background-color: $btn-color;
-  color: white;
+  color: $text;
   padding: 1rem;
 }
 
