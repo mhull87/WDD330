@@ -49,10 +49,10 @@ export default class QuakesController {
       100
     );
 
-    // render the list to html
+    //  render the list to html
     this.quakesView.renderQuakeList(quakeList, this.parentElement);
-    // add a listener to the new list of quakes to allow drill down in to the details. The listener should call this.getQuakeDetails on the targeted element
-    this.parentElement.addEventListener('touchend', e => {
+    //  add a listener to the new list of quakes to allow drill down in to the details. The listener should call this.getQuakeDetails on the targeted element
+     this.parentElement.addEventListener('click', e => {
        this.getQuakeDetails(e.target.dataset.id);
      });
   }
@@ -60,5 +60,7 @@ export default class QuakesController {
     // get the details for the quakeId provided, then send them to the view to be displayed
     const quake = this.quakes.getQuakeById(quakeId);
     this.quakesView.renderQuake(quake, this.parentElement);
+    document.getElementById('back').classList.remove('hidden');
+
   }
 }

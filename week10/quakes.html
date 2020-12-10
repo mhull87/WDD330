@@ -1,22 +1,49 @@
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Local Quakes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .quakeStyles {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      .quakeStyles li {
+        margin: 0.5em 0;
+      }
+      .quakeStyles div {
+        font-size: 0.8em;
+      }
 
-<head>
-  <meta charset='utf-8' />
-  <title>Local Quakes</title>
-  <meta name='viewport' content="width=device-width, initial-scale=1" />
-</head>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
 
-<body>
-  <main id="content">
-    <h1>Quake List</h1>
-    <ul id="quakeList">
-      
-    </ul>
-  </main>  
-  
-  <script type="module" src="js/index.js"></script>
+  <body>
+    <header>
+      <nav>
+        <heading>
+          <nav><ul id="mainNav"></ul></nav>
+        </heading>
+      </nav>
+    </header>
+    <main id="content">
+      <h1>Quake List</h1>
+      <ul id="quakeList" class="quakeStyles"></ul>
+    </main>
 
-</body>
+    <div class="hidden" id="back"><a onclick='reset()'><button>Back</button></a></div>
 
+
+    <div class="btn"><a href="index.html"><button>Back to Week 10</button></a></div>
+    <script>
+      function reset() {
+        window.location.reload();
+      }
+    </script>
+    <script src="js/index.js" type="module"></script>
+  </body>
 </html>
