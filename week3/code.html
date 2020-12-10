@@ -1,122 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang='en'>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Code</h1>
-    <h2><a href=events.html>Event Code</a></h2>
-    <h2>JavaScript: Novice to Ninja Ch 5</h2>
-    window.onload = function () {
-        setTimeout(() => {
-          // Write your code below
-          const quiz = [{
-              name: 'Superman',
-              realName: 'Clark Kent'
-            },
-            {
-              name: 'Wonder Woman',
-              realName: 'Diana Prince'
-            },
-            {
-              name: 'Batman',
-              realName: 'Bruce Wayne'
-            },
-          ];
-      
-          const game = {
-            start(quiz) {
-              this.questions = [...quiz];
-              this.score = 0;
-              //main game loop
-              for (const question of this.questions) {
-                this.question = question;
-                this.ask();
-              }
-              //end of main game loop
-              this.gameOver();
-            },
-            ask() {
-              const question = `What is ${this.question.name}'s real name?`;
-              const response = prompt(question);
-              this.check(response);
-            },
-            check(response) {
-              const answer = this.question.realName;
-              if (response === answer) {
-                alert('Correct!');
-                this.score++;
-              } else {
-                alert(`Wrong! The correct answer was ${answer}`);
-              }
-            },
-            gameOver() {
-              alert(`Game Over, you scored ${this.score} points${this.score !== 1 ? 's' : ''}`);
-            },
-      
-          }
-          game.start(quiz);
-        }, 100);
-      };
+  <meta charset='utf-8'>
+  <title>Events Examples</title>
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
 
-      <h2>JavaScript: Novice to Ninja Ch 6</h2>
-      const quiz = [
-    { name: "Superman",realName: "Clark Kent" },
-    { name: "Wonder Woman",realName: "Diana Prince" },
-    { name: "Batman",realName: "Bruce Wayne" },
-];
-
-// View Object
-const view = {
-    score: document.querySelector('#score strong'),
-    question: document.getElementById('question'),
-    result: document.getElementById('result'),
-    info: document.getElementById('info'),
-    render(target,content,attributes) {
-        for(const key in attributes) {
-            target.setAttribute(key, attributes[key]);
-        }
-        target.innerHTML = content;
+  <style>
+    p {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      background-color: #ccc;
+      float: left;
     }
-};
 
-const game = {
-    start(quiz){
-        this.questions = [...quiz];
-        this.score = 0;
-        // main game loop
-        for(const question of this.questions){
-        this.question = question;
-        this.ask();
-        }
-        // end of main game loop
-        this.gameOver();
-    },
-    ask(){
-      const question = `What is ${this.question.name}'s real name?`;
-      view.render(view.question,question);
-      const response =  prompt(question);
-      this.check(response);
-  },
-  check(response){
-      const answer = this.question.realName;
-      if(response === answer){
-      view.render(view.result,'Correct!',{'class':'correct'});
-      alert('Correct!');
-      this.score++;
-      view.render(view.score,this.score);
-      } else {
-      view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
-      alert(`Wrong! The correct answer was ${answer}`);
-      }
-  },
-  gameOver(){
-      view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
-  }
-}
+    .highlight {
+      background-color: red;
+    }
 
-    <a href="index.html"><button>Back to Week 3</button</a>
-</body>
-</html>
+    .flex {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Events Logged In The Console</h1>
+  <div class="flex">
+    <p id='click'>Click On Me</p>
+    <p id='dblclick'>Double Click On Me</p>
+    <p id='mouse'>Hover On Me</p>
+    <p id='once'>A One Time Thing...</p>
+    <p>
+      <a id='broken' href='https://sitepoint.com'>Broken Link</a>
+    </p>
+  </div>
+  <ul id='list'>
+    <li>one</li>
+    <li>two</li>
+    <li>three</li>
+  </ul>
+  <script src='main.js'></script>
+  <div class="btn"><a href="index.html"><button>Back to Week 3</button</a> </div> 
+  </body> 
+  </html>

@@ -44,7 +44,7 @@ addEventListener('keydown', (event) => {
     }
 });
 
-addEventListener('keydown', (event) => {
+addEventListener('click', (event) => {
     if (event.shiftKey) {
         console.log('A Shifty Click');
     }

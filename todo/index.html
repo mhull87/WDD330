@@ -9,9 +9,50 @@
     rel="stylesheet">
   <script type="module" src="js/ToDo.js"></script>
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: rgb(255, 239, 255);
+    }
+
+    .portfolio {
+      font: 3rem 'Bad Script', cursive;
+      padding: 2rem 2rem 0;
+      text-align: center;
+      color: rgb(112, 21, 112);
+      border-bottom: violet 5px dotted;
+    }
+
+    #portfoliobtn {
+      background-color: rgb(112, 21, 112);
+      border: 1px black solid;
+      border-radius: 20px;
+      padding: .5rem;
+      color: rgb(255, 239, 255);
+      font: 1rem 'Bad Script', cursive;
+      cursor: pointer;
+      transition: box-shadow .3s ease-in-out;
+      margin: 1rem;
+    }
+
+    .btn {
+      text-align: center;
+      border-top: violet 5px dotted;
+      padding-top: 1rem;
+      margin-top: 1.8rem;
+      clear: both;
+    }
+
+    #portfoliobtn:hover {
+      box-shadow: 0 0 40px 40px violet;
+    }
+  </style>
 </head>
 
 <body>
+  <h1 class="portfolio">Midterm Project</h1>
+
   <div class="container">
     <h1>ToDos</h1>
 
@@ -32,6 +73,8 @@
       <button id="addBtn">Add</button>
     </div>
   </div>
+
+  <div class='btn'><a href=" ../index.html"> <button id="portfoliobtn">Back to Portfolio</button></a></div>
 </body>
 
 </html>

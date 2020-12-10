@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz A</title>
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
+
+  <script>
+        window.onload = function () {
+        setTimeout(() => {
+          // Write your code below
+          const quiz = [{
+              name: 'Superman',
+              realName: 'Clark Kent'
+            },
+            {
+              name: 'Wonder Woman',
+              realName: 'Diana Prince'
+            },
+            {
+              name: 'Batman',
+              realName: 'Bruce Wayne'
+            },
+          ];
+      
+          const game = {
+            start(quiz) {
+              this.questions = [...quiz];
+              this.score = 0;
+              //main game loop
+              for (const question of this.questions) {
+                this.question = question;
+                this.ask();
+              }
+              //end of main game loop
+              this.gameOver();
+            },
+            ask() {
+              const question = `What is ${this.question.name}'s real name?`;
+              const response = prompt(question);
+              this.check(response);
+            },
+            check(response) {
+              const answer = this.question.realName;
+              if (response === answer) {
+                alert('Correct!');
+                this.score++;
+              } else {
+                alert(`Wrong! The correct answer was ${answer}`);
+              }
+            },
+            gameOver() {
+              alert(`Game Over, you scored ${this.score} points${this.score !== 1 ? 's' : ''}`);
+            },
+      
+          }
+          game.start(quiz);
+        }, 100);
+      };
+
+  </script>
+</head>
+<body>
+  <h1>Alert Quiz</h1>
+  <div class="btn"><a href="index.html"><button>Back to Week 3</button></a></div>
+
+</body>
+</html>

@@ -2,384 +2,390 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Week 3 Notes</title>
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
+
 </head>
 
-<body>
-    <h1>Week 3 Notes</h1>
-    <h2>Readings</h2>
-    <h3><u>Object Methods: this</u></h3>
-    <ul>
-        <li>Method Shorthand: these are the same
-            <ul>
-                <li>user = {<br>
-                    sayHi: function() {<br>
-                    alert('Hello');<br>
-                    }<br>
-                    };
-                </li>
-                <li>//Shorthand<br>
-                    user = {<br>
-                    sayHi() { //same as 'sayHi: function()'<br>
-                    alert('Hello');<br>
-                    }<br>
-                    ;}
-                </li>
-            </ul>
+<body class="displaydots">
+  <h1>Week 3 Notes</h1>
+  <h2>Readings</h2>
+  <h3><u>Object Methods: this</u></h3>
+  <ul>
+    <li>Method Shorthand: these are the same
+      <ul>
+        <li>user = {<br>
+          sayHi: function() {<br>
+          alert('Hello');<br>
+          }<br>
+          };
         </li>
-        <li>using this.name instead of user.name allows the function to work even if user is copied to another variable
+        <li>//Shorthand<br>
+          user = {<br>
+          sayHi() { //same as 'sayHi: function()'<br>
+          alert('Hello');<br>
+          }<br>
+          ;}
         </li>
-        <li>arrow functions dont have their own this, they use it from the outer Method
-            <ul>
-                <li>let user = {<br>
-                    firstName: 'Ilya',<br>
-                    sayHi() {<br>
-                    let arrow = () => alert(this.firstName);<br>
-                    arrow();<br>
-                    }<br>
-                    };<br><br>
-                    user.sayHi(); //Ilya</li>
-            </ul>
-        </li>
-    </ul>
-
-    <h3><u>JavaScript: Novice to Ninja</u> Ch 5 - Objects</h3>
-    <ul>
-        <li>in JS objects can be changed or removed even if declared as a const</li>
-        <li>declaring an object Shorthand
-            <ul>
-                <li>if the properity key and variable name are the same:</li>
-                <li>const name = 'Iron Man';<br>
-                    const realName = 'Tony Stark';<br>
-                    // long way<br>
-                    const ironMan = { name: name, realName: realName };<br>
-                    // short ES6 way<br>
-                    const ironMan = { name, realName };</li>
-            </ul>
-        </li>
-        <li>use brackets(ironMan['real name']) instead of dot notion(ironMan.name) to retrieve non standard named keys
-            (names with spaces)</li>
-        <li>you can use Symbol('name') and retrieve it with brackets
-            <ul>
-                <li>const name = Symbol('name');<br>
-                    const supergirl = { [name]: 'Supergirl' };<br>
-                    supergirl[name]; //'Supergirl'</li>
-                <li>you can use them in other objects</li>
-                <li>const daredevil = { [name]: 'Daredevil;, [realName]: 'Matt Murdoch'};</li>
-            </ul>
-        </li>
-        <li>check if properities or methods exist with the in operator or hasOwnProperty()
-            <ul>
-                <li>'city' in superman; //false</li>
-                <li>superman.hasOwnProperty('city'); //false<br>
-                    superman.hasOwnProperty('name'); //true</li>
-            </ul>
-        <li>loop through all properities with for in
-            <ul>
-                <li>for(const key in superman) {<br>
-                    if(superman.hasOwnProperty(key)){<br>
-                    console.log(key + ": " + superman[key]);<br>
-                    }<br>
-                    }</li>
-                <li>the if statement will check so it will only return its own properities</li>
-                <li>can use Object.keys, Object.values, or Object.entries to return them in an array</li>
-                <ul>
-                    <li>use this to list them seperately</li>
-                    <li>for(const [key,value] of Object.entries(superman)) {<br>
-                        console.log(`${key}: ${value}`);</li>
-                </ul>
-            </ul>
-        </li>
-        </li>
-        <li>JSON
-            <ul>
-                <li>property names must be double-quoted</li>
-                <li>values can be double-quoted strings, numbers, true, false, null, arrays and objects</li>
-                <li>functions are not permitted values</li>
-                <li>JSON.parse(object1) takes a string of data in JSON format and returns a JavaScript object</li>
-                <li>JSON.stringify(object2) does the opposite, taks a JavaScript object and returns a string of JSON
-                    data</li>
-                <li>methods will be ignored</li>
-                <li>add spaces
-                    <ul>
-                        <li>JSON.stringify(wonderWoman, null, " ");</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Date() has multiple methods getMonth() getDay() getYear() getFullYear() getUTCFullYear() getDate() etc and
-            set methods</li>
-        <li>Regular Expressions
-            <ul>
-                <li>is a pattern that can be used to search strings for matches to the pattern. <br>
-                    A common use is 'find and replace' type operations.<br>
-                    For example, say you were looking for any word ending in 'ing', you could use the regular expression
-                    /[a-zA-Z]+ing$/</li>
-                <li>const pattern = /[a-zA-Z]+ing$/; or <br>
-                    const pattern = new ReExp('[a-zA-Z]+ing');</li>
-                <li>use .test() to see if it matches
-                    <ul>
-                        <li>pattern.test('joke'); //false<br>
-                            pattern.test('joking'); //true<br>
-                            pattern.test('jokingly'); //false</li>
-                    </ul>
-                </li>
-                <li>.exec() returns an array containing the first match or null if nothing is found</li>
-                <li>[^A-Z] negates (not capital a-z)</li>
-                <li>flags: g will return all matches insead of just the first<br>
-                    i will ignoreCase<br>
-                    m will set it to multiline</li>
-                <li>Special Characters
-                    <ul>
-                        <li>. matches any character, except line breaks</li>
-                        <li>\w matches any word character = [A-Za-z0-9_]</li>
-                        <li>\W matches any non-word character = [\^A-Za-z0-9_]</li>
-                        <li>\d matches any digit character = [0-9]</li>
-                        <li>\D matches any non digit character = [^0-9]</li>
-                        <li>\s matches any whitespace character = [\t\r\n\f]</li>
-                        <li>\S matches any non-whitespace character = [^\t\r\n\f]</li>
-                    </ul>
-                </li>
-                <li>Modifiers
-                    <ul>
-                        <li>need to use backslashes ex: /?/</li>
-                        <li> ? makes the preceding token in the regular expression optional</li>
-                        <li>* matches one or more occurrences of the preceding token</li>
-                        <li>+ matches one or more occurrences of the preceding token</li>
-                        <li>{n} matchesnoccurrences of the preceding token</li>
-                        <li>{n,} matches at leastnoccurrences of the pattern</li>
-                        <li>{,m} matches at mostmoccurrences of the preceding token</li>
-                        <li>{n,m} matches at leastnand at mostmoccurrences of the preceding token</li>
-                        <li>^ marks the position immediately before the first character in the string</li>
-                        <li>$ marks the position immediately after the last character in the string</li>
-                        <li>default matches the longest string</li>
-                        <li>match the shortest string with an additional ?</li>
-                    </ul>
-                </li>
-                <li>regular expressions can be used in string methods like split()</li>
-
-            </ul>
-        </li>
-    </ul>
-
-    <h3><u>JavaScript: Novice to Ninja</u> Ch 6 - The Document Object Model</h3>
-    <ul>
-        <li>html is the root node in the DOM, every other part is a child of html</li>
-        <li>node code
-            <ul>
-                <li>1 element</li>
-                <li>2 attribute</li>
-                <li>3 text</li>
-                <li>8 comment</li>
-                <li>9 body</li>
-                <li>there are more but they are not used in HTML documents</li>
-            </ul>
-        </li>
-        <li>Document
-            <ul>
-                <li>Document.body</li>
-                <li>Document.images returns a node list of images</li>
-                <li>Document.links returns a node list of all the a and area elements that have a href attribute</li>
-                <li>Document.anchors returns a node list of all a elements that have a name attribute</li>
-                <li>Document.forms returns a node list of all forms</li>
-                <li>you can access items with an index but it is not actually an array
-                    <ul>
-                        <li>ex: document.images[0]</li>
-                        <li>they have a .length property but not slice, splice or joking</li>
-                        <li>you can turn a node list into an array
-                            <ul>
-                                <li>ex: const imageArray = Array.from(document.images);</li>
-                                <li>or use a spread operator</li>
-                                <li>ex: const imageArray = [...document.images];</li>
-                                <li>once it is an array you can use all array methods on it</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>getElementById() returns a referance to the id given</li>
-        <li>getElementsByTagName() returns a live node list</li>
-        <li>getElementsByClassName() returns a live node list</li>
-        <li>document.querySelector() uses CSS notation to return the first matching element</li>
-        <li>document.querySelectorAll() uses CSS notation to return all matching in a node list (not live)</li>
-        <li>querySelector and be used with psudo-selectors
-            <ul>
-                <li>ex: const wonderWoman = document.querySelector('li:last-child');</li>
-                <li>can use on any element</li>
-                <li>ex: const ul = document.querySelector('ul#roster');<br>
-                    const batman = ul.querySelector('li#bats');</li>
-            </ul>
-        </li>
-        <li>.childNodes returns all children and white spaces at text nodes</li>
-        <li>.children returns all elemenst nodes</li>
-        <li>.firstChild and .lastChild may return whitespace text nodes instead of the intended element</li>
-        <li>.nextSibling and .previousSibling may do the same</li>
-        <li>use .nodeValue or .textContent to validate</li>
-        <li>getAttribute()</li>
-        <li>setAttribute()</li>
-        <li>.classList returns all class names. you can .add and .delete classes from this</li>
-        <li>use addClass() for IE 9 and less</li>
-        <li>Creating
-            <ul>
-                <li>createElement()</li>
-                <li>ex: const flash = document.createELement('li');</li>
-                <li>createTextNode() to enter text into the element</li>
-                <li>ex: const flashText = document.createTextNode('Flash');</li>
-                <li>appendChild()</li>
-                <li>ex: flash.appendChild(flashText);</li>
-                <li>shortcut</li>
-                <li>const flash = document.createElement('li');<br>
-                    flash.textContent = 'Flash';</li>
-                <li>or</li>
-                <li>createElement(tag, text) {<br>
-                    const el = document.createElement(tag);<br>
-                    el.testContent = text;<br>
-                    return el<br>
-                    }</li>
-                <li>.insertBefore(itemToInsert, beforeThisItem)</li>
-                <li>use appendChild to move an element to the end of the list</li>
-            </ul>
-        </li>
-        <li>Removing
-            <ul>
-                <li>.removeChild()</li>
-                <li>.replaceChild(newText, oldText)</li>
-            </ul>
-        </li>
-        <li>.innerHTML saves from having to creat a childNode
-            <ul>
-                <li>can use it to insert tags too</li>
-                <li>ex: heroes.innerHTML = '< li>Harley Quinn< /li> < li>Deadshot< /li> < li>Killer Croc</ li>
-                            < li>Enchantress</ li>
-                            < li>Captain Boomerang< /li> < li>Katana</ li>
-                                < li>Slipknot</ li>';<br>
-                                makes:
-                <li>Harley Quinn</li>
-                <li>Deadshot</li>
-                <li>Killer Croc</li>
-                <li>Enchantress</li>
-                <li>Captain Boomerang</li>
-                <li>Katana</li>
-                <li>Slipknot</li>
-        </li>
-    </ul>
-    <li>.innerHTML wont work if it is script tags in the HTML</li>
+      </ul>
     </li>
-    <li>every node has a style property for CSS
+    <li>using this.name instead of user.name allows the function to work even if user is copied to another variable
+    </li>
+    <li>arrow functions dont have their own this, they use it from the outer Method
+      <ul>
+        <li>let user = {<br>
+          firstName: 'Ilya',<br>
+          sayHi() {<br>
+          let arrow = () => alert(this.firstName);<br>
+          arrow();<br>
+          }<br>
+          };<br><br>
+          user.sayHi(); //Ilya</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3><u>JavaScript: Novice to Ninja</u> Ch 5 - Objects</h3>
+  <ul>
+    <li>in JS objects can be changed or removed even if declared as a const</li>
+    <li>declaring an object Shorthand
+      <ul>
+        <li>if the properity key and variable name are the same:</li>
+        <li>const name = 'Iron Man';<br>
+          const realName = 'Tony Stark';<br>
+          // long way<br>
+          const ironMan = { name: name, realName: realName };<br>
+          // short ES6 way<br>
+          const ironMan = { name, realName };</li>
+      </ul>
+    </li>
+    <li>use brackets(ironMan['real name']) instead of dot notion(ironMan.name) to retrieve non standard named keys
+      (names with spaces)</li>
+    <li>you can use Symbol('name') and retrieve it with brackets
+      <ul>
+        <li>const name = Symbol('name');<br>
+          const supergirl = { [name]: 'Supergirl' };<br>
+          supergirl[name]; //'Supergirl'</li>
+        <li>you can use them in other objects</li>
+        <li>const daredevil = { [name]: 'Daredevil;, [realName]: 'Matt Murdoch'};</li>
+      </ul>
+    </li>
+    <li>check if properities or methods exist with the in operator or hasOwnProperty()
+      <ul>
+        <li>'city' in superman; //false</li>
+        <li>superman.hasOwnProperty('city'); //false<br>
+          superman.hasOwnProperty('name'); //true</li>
+      </ul>
+    <li>loop through all properities with for in
+      <ul>
+        <li>for(const key in superman) {<br>
+          if(superman.hasOwnProperty(key)){<br>
+          console.log(key + ": " + superman[key]);<br>
+          }<br>
+          }</li>
+        <li>the if statement will check so it will only return its own properities</li>
+        <li>can use Object.keys, Object.values, or Object.entries to return them in an array</li>
         <ul>
-            <li>ex: superman.style.border = 'red 2px solid';</li>
+          <li>use this to list them seperately</li>
+          <li>for(const [key,value] of Object.entries(superman)) {<br>
+            console.log(`${key}: ${value}`);</li>
         </ul>
+      </ul>
     </li>
-    <li>camel any properties with a Deadshot
-        <ul>
-            <li>ex: superman.style.backgroundColor = 'blue';</li>
-        </ul>
     </li>
-    <li>use .style.display = 'none'; to hide elements</li>
-    <li>use .style.display = 'block'; to unhide elements</li>
-    </ul>
+    <li>JSON
+      <ul>
+        <li>property names must be double-quoted</li>
+        <li>values can be double-quoted strings, numbers, true, false, null, arrays and objects</li>
+        <li>functions are not permitted values</li>
+        <li>JSON.parse(object1) takes a string of data in JSON format and returns a JavaScript object</li>
+        <li>JSON.stringify(object2) does the opposite, taks a JavaScript object and returns a string of JSON
+          data</li>
+        <li>methods will be ignored</li>
+        <li>add spaces
+          <ul>
+            <li>JSON.stringify(wonderWoman, null, " ");</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Date() has multiple methods getMonth() getDay() getYear() getFullYear() getUTCFullYear() getDate() etc and
+      set methods</li>
+    <li>Regular Expressions
+      <ul>
+        <li>is a pattern that can be used to search strings for matches to the pattern. <br>
+          A common use is 'find and replace' type operations.<br>
+          For example, say you were looking for any word ending in 'ing', you could use the regular expression
+          /[a-zA-Z]+ing$/</li>
+        <li>const pattern = /[a-zA-Z]+ing$/; or <br>
+          const pattern = new ReExp('[a-zA-Z]+ing');</li>
+        <li>use .test() to see if it matches
+          <ul>
+            <li>pattern.test('joke'); //false<br>
+              pattern.test('joking'); //true<br>
+              pattern.test('jokingly'); //false</li>
+          </ul>
+        </li>
+        <li>.exec() returns an array containing the first match or null if nothing is found</li>
+        <li>[^A-Z] negates (not capital a-z)</li>
+        <li>flags: g will return all matches insead of just the first<br>
+          i will ignoreCase<br>
+          m will set it to multiline</li>
+        <li>Special Characters
+          <ul>
+            <li>. matches any character, except line breaks</li>
+            <li>\w matches any word character = [A-Za-z0-9_]</li>
+            <li>\W matches any non-word character = [\^A-Za-z0-9_]</li>
+            <li>\d matches any digit character = [0-9]</li>
+            <li>\D matches any non digit character = [^0-9]</li>
+            <li>\s matches any whitespace character = [\t\r\n\f]</li>
+            <li>\S matches any non-whitespace character = [^\t\r\n\f]</li>
+          </ul>
+        </li>
+        <li>Modifiers
+          <ul>
+            <li>need to use backslashes ex: /?/</li>
+            <li> ? makes the preceding token in the regular expression optional</li>
+            <li>* matches one or more occurrences of the preceding token</li>
+            <li>+ matches one or more occurrences of the preceding token</li>
+            <li>{n} matchesnoccurrences of the preceding token</li>
+            <li>{n,} matches at leastnoccurrences of the pattern</li>
+            <li>{,m} matches at mostmoccurrences of the preceding token</li>
+            <li>{n,m} matches at leastnand at mostmoccurrences of the preceding token</li>
+            <li>^ marks the position immediately before the first character in the string</li>
+            <li>$ marks the position immediately after the last character in the string</li>
+            <li>default matches the longest string</li>
+            <li>match the shortest string with an additional ?</li>
+          </ul>
+        </li>
+        <li>regular expressions can be used in string methods like split()</li>
 
+      </ul>
+    </li>
+  </ul>
 
-    <h3><u>JavaScript: Novice to Ninja</u> Ch 7 - Events</h3>
+  <h3><u>JavaScript: Novice to Ninja</u> Ch 6 - The Document Object Model</h3>
+  <ul>
+    <li>html is the root node in the DOM, every other part is a child of html</li>
+    <li>node code
+      <ul>
+        <li>1 element</li>
+        <li>2 attribute</li>
+        <li>3 text</li>
+        <li>8 comment</li>
+        <li>9 body</li>
+        <li>there are more but they are not used in HTML documents</li>
+      </ul>
+    </li>
+    <li>Document
+      <ul>
+        <li>Document.body</li>
+        <li>Document.images returns a node list of images</li>
+        <li>Document.links returns a node list of all the a and area elements that have a href attribute</li>
+        <li>Document.anchors returns a node list of all a elements that have a name attribute</li>
+        <li>Document.forms returns a node list of all forms</li>
+        <li>you can access items with an index but it is not actually an array
+          <ul>
+            <li>ex: document.images[0]</li>
+            <li>they have a .length property but not slice, splice or joking</li>
+            <li>you can turn a node list into an array
+              <ul>
+                <li>ex: const imageArray = Array.from(document.images);</li>
+                <li>or use a spread operator</li>
+                <li>ex: const imageArray = [...document.images];</li>
+                <li>once it is an array you can use all array methods on it</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>getElementById() returns a referance to the id given</li>
+    <li>getElementsByTagName() returns a live node list</li>
+    <li>getElementsByClassName() returns a live node list</li>
+    <li>document.querySelector() uses CSS notation to return the first matching element</li>
+    <li>document.querySelectorAll() uses CSS notation to return all matching in a node list (not live)</li>
+    <li>querySelector and be used with psudo-selectors
+      <ul>
+        <li>ex: const wonderWoman = document.querySelector('li:last-child');</li>
+        <li>can use on any element</li>
+        <li>ex: const ul = document.querySelector('ul#roster');<br>
+          const batman = ul.querySelector('li#bats');</li>
+      </ul>
+    </li>
+    <li>.childNodes returns all children and white spaces at text nodes</li>
+    <li>.children returns all elemenst nodes</li>
+    <li>.firstChild and .lastChild may return whitespace text nodes instead of the intended element</li>
+    <li>.nextSibling and .previousSibling may do the same</li>
+    <li>use .nodeValue or .textContent to validate</li>
+    <li>getAttribute()</li>
+    <li>setAttribute()</li>
+    <li>.classList returns all class names. you can .add and .delete classes from this</li>
+    <li>use addClass() for IE 9 and less</li>
+    <li>Creating
+      <ul>
+        <li>createElement()</li>
+        <li>ex: const flash = document.createELement('li');</li>
+        <li>createTextNode() to enter text into the element</li>
+        <li>ex: const flashText = document.createTextNode('Flash');</li>
+        <li>appendChild()</li>
+        <li>ex: flash.appendChild(flashText);</li>
+        <li>shortcut</li>
+        <li>const flash = document.createElement('li');<br>
+          flash.textContent = 'Flash';</li>
+        <li>or</li>
+        <li>createElement(tag, text) {<br>
+          const el = document.createElement(tag);<br>
+          el.testContent = text;<br>
+          return el<br>
+          }</li>
+        <li>.insertBefore(itemToInsert, beforeThisItem)</li>
+        <li>use appendChild to move an element to the end of the list</li>
+      </ul>
+    </li>
+    <li>Removing
+      <ul>
+        <li>.removeChild()</li>
+        <li>.replaceChild(newText, oldText)</li>
+      </ul>
+    </li>
+    <li>.innerHTML saves from having to creat a childNode
+      <ul>
+        <li>can use it to insert tags too</li>
+        <li>ex: heroes.innerHTML = '< li>Harley Quinn< /li> < li>Deadshot< /li> < li>Killer Croc</ li>
+              < li>Enchantress</ li>
+              < li>Captain Boomerang< /li> < li>Katana</ li>
+                < li>Slipknot</ li>';<br>
+                makes:
+        <li>Harley Quinn</li>
+        <li>Deadshot</li>
+        <li>Killer Croc</li>
+        <li>Enchantress</li>
+        <li>Captain Boomerang</li>
+        <li>Katana</li>
+        <li>Slipknot</li>
+    </li>
+  </ul>
+  <li>.innerHTML wont work if it is script tags in the HTML</li>
+  </li>
+  <li>every node has a style property for CSS
     <ul>
-        <li>a click event is a click, enter on the keyboard, or a touch</li>
-        <li>addEventListner(event, function);</li>
-        <li>no parenthesis when the function is used as the argument, otherwise it will be called instead of waiting
-        </li>
-        <li>show or count events with the .type property
-            <ul>
-                <li>addEventListener('click', doSomething);<br><br>
-
-                    function doSomething(event) {
-                    console.log(event.type);
-                    }</li>
-            </ul>
-        </li>
-        <li>.target returns a reference to the node that fired</li>
-        <li>Coordinates of an event
-            <ul>
-                <li>screenX and screenY number of px from left and top of screen</li>
-                <li>clientX and clientY number of px from left and top of client (usually browser window)</li>
-                <li>pageX and pageY number of px from the left and top of document (takes into account scrolling)</li>
-            </ul>
-        </li>
-        <li>Events *see events code for examples (there are more than this)
-            <ul>
-                <li>Mouse Events
-                    <ul>
-                        <li>click</li>
-                        <li>mousedown</li>
-                        <li>mouseup</li>
-                        <li>dblclick</li>
-                        <li>mouseover</li>
-                        <li>mouseout</li>
-                        <li>mousemove</li>
-                    </ul>
-                </li>
-                <li>Keyboard Events
-                    <ul>
-                        <li>keydown (will continue to fire if held down)</li>
-                        <li>keypress (has a key properity that tells what key pressed</li>
-                        <li>keyup</li>
-                        <li>Modifier Keys
-                            <ul>
-                                <li>shift ctrl alt and meta will fire the keydown and keyup but not keypress because
-                                    they don't produce any characters on the screen</li>
-                                <li>also show how long they were held (see code)</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>Touch Events
-                    <ul>
-                        <li>use both touch and mouse events to cover all devices</li>
-                        <li>touchstart (not recommended because it interferes with other user actions, use click instead because it has a 300ms delay</li>
-                        <li>touchend</li>
-                        <li>touchmove</li>
-                        <li>touchenter</li>
-                        <li>touchleave</li>
-                        <li>touchcancel</li>
-                        <li>gestures can be used with Hammer.JS or zingtouch</li>
-                        <li>Touch Event properties
-                            <ul>
-                                <li>touches (0 indexed)</li>
-                                <li>length (how many fingers)</li>
-                                <li>touch.screenX and touch.screenY</li>
-                                <li>touch.radiusX and touch.radiusY</li>
-                                <li>touch.force</li>
-                                <li>touch.identifier (unique ID that can be used to ensure you are dealing with the same touch</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>removeEventListener()
-            <ul>
-                <li>do not use anonymous functions if you want to remove the event listener later</li>
-            </ul>
-        </li>
-        <li>Stopping Default Behavior
-            <ul>
-                <li>preventDefault()</li>
-            </ul>
-        </li>
-        <li>Bubbling bubbles up to top node</li>
-        <li>Capturing flows inward to target node</li>
-        <li>use the third parameter to turn on capturing (true)</li>
-        <li>Stop Bubbling Phase with event.stopPropagation()</li>
-        <li>be carful not to stop other event listeners</li>
-        <li>deligate event listeners to the parent and use capture to hit all the elements within</li>
+      <li>ex: superman.style.border = 'red 2px solid';</li>
     </ul>
-
-    <h2>Questions</h2>
+  </li>
+  <li>camel any properties with a Deadshot
     <ul>
-        <li>How is the Symbol() data type used? What is the need for it?</li>
-        <li>[A-Za-z0-9_] What does the underscore mean?</li>
+      <li>ex: superman.style.backgroundColor = 'blue';</li>
     </ul>
+  </li>
+  <li>use .style.display = 'none'; to hide elements</li>
+  <li>use .style.display = 'block'; to unhide elements</li>
+  </ul>
 
 
-    <a href="index.html"><button>Back to Week 3</button</a> </body> </html>
+  <h3><u>JavaScript: Novice to Ninja</u> Ch 7 - Events</h3>
+  <ul>
+    <li>a click event is a click, enter on the keyboard, or a touch</li>
+    <li>addEventListner(event, function);</li>
+    <li>no parenthesis when the function is used as the argument, otherwise it will be called instead of waiting
+    </li>
+    <li>show or count events with the .type property
+      <ul>
+        <li>addEventListener('click', doSomething);<br><br>
+
+          function doSomething(event) {
+          console.log(event.type);
+          }</li>
+      </ul>
+    </li>
+    <li>.target returns a reference to the node that fired</li>
+    <li>Coordinates of an event
+      <ul>
+        <li>screenX and screenY number of px from left and top of screen</li>
+        <li>clientX and clientY number of px from left and top of client (usually browser window)</li>
+        <li>pageX and pageY number of px from the left and top of document (takes into account scrolling)</li>
+      </ul>
+    </li>
+    <li>Events *see events code for examples (there are more than this)
+      <ul>
+        <li>Mouse Events
+          <ul>
+            <li>click</li>
+            <li>mousedown</li>
+            <li>mouseup</li>
+            <li>dblclick</li>
+            <li>mouseover</li>
+            <li>mouseout</li>
+            <li>mousemove</li>
+          </ul>
+        </li>
+        <li>Keyboard Events
+          <ul>
+            <li>keydown (will continue to fire if held down)</li>
+            <li>keypress (has a key properity that tells what key pressed</li>
+            <li>keyup</li>
+            <li>Modifier Keys
+              <ul>
+                <li>shift ctrl alt and meta will fire the keydown and keyup but not keypress because
+                  they don't produce any characters on the screen</li>
+                <li>also show how long they were held (see code)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Touch Events
+          <ul>
+            <li>use both touch and mouse events to cover all devices</li>
+            <li>touchstart (not recommended because it interferes with other user actions, use click instead because it
+              has a 300ms delay</li>
+            <li>touchend</li>
+            <li>touchmove</li>
+            <li>touchenter</li>
+            <li>touchleave</li>
+            <li>touchcancel</li>
+            <li>gestures can be used with Hammer.JS or zingtouch</li>
+            <li>Touch Event properties
+              <ul>
+                <li>touches (0 indexed)</li>
+                <li>length (how many fingers)</li>
+                <li>touch.screenX and touch.screenY</li>
+                <li>touch.radiusX and touch.radiusY</li>
+                <li>touch.force</li>
+                <li>touch.identifier (unique ID that can be used to ensure you are dealing with the same touch</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>removeEventListener()
+      <ul>
+        <li>do not use anonymous functions if you want to remove the event listener later</li>
+      </ul>
+    </li>
+    <li>Stopping Default Behavior
+      <ul>
+        <li>preventDefault()</li>
+      </ul>
+    </li>
+    <li>Bubbling bubbles up to top node</li>
+    <li>Capturing flows inward to target node</li>
+    <li>use the third parameter to turn on capturing (true)</li>
+    <li>Stop Bubbling Phase with event.stopPropagation()</li>
+    <li>be carful not to stop other event listeners</li>
+    <li>deligate event listeners to the parent and use capture to hit all the elements within</li>
+  </ul>
+
+  <h2>Questions</h2>
+  <ul>
+    <li>How is the Symbol() data type used? What is the need for it?</li>
+    <li>[A-Za-z0-9_] What does the underscore mean?</li>
+  </ul>
+
+  <div class="btn"><a href="index.html"><button>Back to Week 3</button></a></div>
+</body>
+
+</html>

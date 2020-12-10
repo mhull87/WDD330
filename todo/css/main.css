@@ -1,6 +1,8 @@
 .container {
   max-width: 500px;
   border: 1px solid black;
+  margin: auto;
+  background-color: white;
 }
 
 h1 {
@@ -16,7 +18,11 @@ h1 {
 .todo {
   width: 300px;
   border: 1px solid black;
-  margin: 5px;
+  margin: 5px auto;
+}
+
+.todo-filters {
+  text-align: center;
 }
 
 .complete-btn {
@@ -42,10 +48,6 @@ h1 {
   font-size: 20px;
 }
 
-.todos-wrapper {
-  margin: 0 100px;
-}
-
 #addBtn {
   background-color: lightseagreen;
   color: aliceblue;
@@ -64,5 +66,6 @@ h1 {
 
 button {
   font-family: 'Gloria Hallelujah', cursive;
-  background-color: rgba(255, 230, 0, 0.205)
+  background-color: rgba(255, 230, 0, 0.205);
+  margin-top: 1rem;
 }

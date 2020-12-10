@@ -1,13 +1,10 @@
 .question-grid {
-  display: -ms-grid;
   display: grid;
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
   max-width: fit-content;
   place-items: start;
 }
 
-#next {
+.next {
   place-self: center;
 }
 
@@ -36,13 +33,11 @@ h2 {
 }
 
 .btn {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #79bbff), to(#378de5));
   background: linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
   background-color: #79bbff;
   border: 1px solid #337bc4;
   border-radius: 5px;
-  -webkit-box-shadow: 3px 4px 0 #1564ad;
-          box-shadow: 3px 4px 0 #1564ad;
+  box-shadow: 3px 4px 0 #1564ad;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -54,7 +49,6 @@ h2 {
 }
 
 .btn:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, #378de5), to(#79bbff));
   background: linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
   background-color: #378de5;
 }
@@ -70,7 +64,7 @@ p {
 
 .choiceNumber {
   background-color: #79bbff;
-  color: white;
+  color: #fff;
   padding: 1rem;
 }
 
@@ -79,8 +73,7 @@ p {
 }
 
 .answerDiv:hover {
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
+  transform: translateY(5px);
 }
 
 .choice {
@@ -115,15 +108,9 @@ p {
 }
 
 #progress_container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  align-items: center;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin: auto;
   max-width: 600px;
 }
@@ -153,8 +140,6 @@ p {
 }
 
 .scoretext {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -173,80 +158,60 @@ body {
   width: 100%;
 }
 
-.curtain-wrapper input[type=checkbox] {
+.curtain-wrapper input[type='checkbox'] {
   cursor: pointer;
   height: 70%;
+  left: 0;
   opacity: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
   z-index: 4;
 }
 
-.curtain-wrapper input[type=checkbox]:checked ~ div.curtain-panel-left {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+.curtain-wrapper input[type='checkbox']:checked ~ div.curtain-panel-left {
+  transform: translateX(0);
 }
 
-.curtain-wrapper input[type=checkbox]:checked ~ div.curtain-panel-right {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+.curtain-wrapper input[type='checkbox']:checked ~ div.curtain-panel-right {
+  transform: translateX(0);
 }
 
 .curtain-panel {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: #ffa500;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   float: left;
   height: 100vh;
   position: relative;
-  -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
   width: 50%;
   z-index: 3;
 }
 
 .curtain-panel-left {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  justify-content: flex-end;
+  transform: translateX(-100%);
 }
 
 .curtain-panel-right {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  justify-content: flex-start;
+  transform: translateX(100%);
 }
 
 .curtain-content {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: #333;
   color: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 100vh;
+  max-width: 900px;
   padding-top: 5rem;
   position: absolute;
   text-align: center;
   width: 100%;
-  max-width: 900px;
   z-index: 1;
 }
 
@@ -258,7 +223,7 @@ body {
   font-size: .4rem;
 }
 
-#playagain {
+.playagain {
   margin-bottom: 1rem;
   z-index: 2;
 }

@@ -19,7 +19,7 @@ const links = [{
     url: 'week5/index.html'
   },
   {
-    label: 'Week 6',
+    label: 'Midterm Project',
     url: 'week6/index.html'
   },
   {

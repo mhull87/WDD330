@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Story Writer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Writer</title>
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
 </head>
+
 <script>
-    function loadStory() {
-        var storyName = document.getElementById('name_input').value
-        var storyHTML = localStorage.getItem(storyName)
-        document.getElementById('story_editor').value = storyHTML
-    }
+  function loadStory() {
+    var storyName = document.getElementById('name_input').value
+    var storyHTML = localStorage.getItem(storyName)
+    document.getElementById('story_editor').value = storyHTML
+  }
 
-    function saveStory() {
-        var storyName = document.getElementById('name_input').value
-        var storyHTML = document.getElementById('story_editor').value
-        localStorage.setItem(storyName, storyHTML)
-    }
+  function saveStory() {
+    var storyName = document.getElementById('name_input').value
+    var storyHTML = document.getElementById('story_editor').value
+    localStorage.setItem(storyName, storyHTML)
+  }
 
-    function displayStory() {
-        var storyHTML = document.getElementById('story_editor').value
-        document.getElementById('story_display').innerHTML = storyHTML
-    }
-
+  function displayStory() {
+    var storyHTML = document.getElementById('story_editor').value
+    document.getElementById('story_display').innerHTML = storyHTML
+  }
 </script>
-<style>
-    textarea {
-        width: 800px;
-        height: 250px;
-        background-color: lightyellow;
-    }
-</style>
-<body>
-    <h1>Story Editor</h1>
-    Story Name: <input id=name_input></input>
-    <section>
-        <button onclick="loadStory()">Find and Edit It</button>
-        <button onclick="saveStory()">Save It</button>
-        <button onclick="displayStory()">Display It</button>
-    </section>
-    <textarea id='story_editor' placeholder="Write a totally awesome story here."></textarea>
 
-    <section id="story_display"></section>
-    <a href="index.html"><button>Back to Week 1</button</a>
+<style>
+  textarea {
+    width: 800px;
+    height: 250px;
+    background-color: lightyellow;
+  }
+</style>
+
+<body>
+  <h1>Story Editor</h1>
+
+  <div class="input">
+    <label>Story Name:</label>
+    <input id=name_input></input>
+  </div>
+
+  <section>
+    <button onclick="loadStory()">Find and Edit It</button>
+    <button onclick="saveStory()">Save It</button>
+    <button onclick="displayStory()">Display It</button>
+  </section>
+
+  <textarea id='story_editor' placeholder="Write a totally awesome story here."></textarea>
+
+  <section id="story_display"></section><br><br><br>
+
+  <div class="btn"><a href="index.html"><button>Back to Week 1</button></a></div>
+
 </body>
+
 </html>
