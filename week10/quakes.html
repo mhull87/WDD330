@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title>Local Quakes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Staatliches&display=swap" rel="stylesheet">
+  
     <style>
       .quakeStyles {
         list-style-type: none;
@@ -19,6 +22,11 @@
       .hidden {
         display: none;
       }
+
+      .red {
+        color: rgb(167, 0, 0);
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -32,13 +40,14 @@
     </header>
     <main id="content">
       <h1>Quake List</h1>
+      <p class="red">Click for quake details.</p>
       <ul id="quakeList" class="quakeStyles"></ul>
     </main>
 
     <div class="hidden" id="back"><a onclick='reset()'><button>Back</button></a></div>
 
 
-    <div class="btn"><a href="index.html"><button>Back to Week 10</button></a></div>
+    <div class="btn hidden" id="backtoindex"><a href="index.html"><button>Back to Week 10</button></a></div>
     <script>
       function reset() {
         window.location.reload();

@@ -61,6 +61,6 @@ export default class QuakesController {
     const quake = this.quakes.getQuakeById(quakeId);
     this.quakesView.renderQuake(quake, this.parentElement);
     document.getElementById('back').classList.remove('hidden');
-
+    document.getElementById('backtoindex').classList.remove('hidden');
   }
 }

@@ -20,7 +20,6 @@ export default class Quake {
   getQuakeById(id) {
     // filter this._quakes for the record identified by id and return it
      return this._quakes.features.filter(item => item.id === id)[0];
- 
   } 
 
 }
