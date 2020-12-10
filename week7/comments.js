@@ -22,7 +22,7 @@ class CommentModel {
     const newComment = {
       name: postName,
       comment: comment,
-      date: new Date()
+      date: new Date().toDateString()
     };
     this.comments.push(newComment);
     writeToLS(this.type, this.comments);
@@ -46,7 +46,7 @@ const commentUI = `<div class="addComment">
 <input type="text" id="commentEntry" />
 <button id="commentSubmit">Comment</button>
 </div>
-<h2>Comments</h2>
+<h2 class='commentsborder'>Comments</h2>
 <ul class="comments"></ul>`;
 // I only had one function for the view...so I chose not to use an object or class.
 function renderCommentList(element, comments) {
@@ -56,8 +56,17 @@ function renderCommentList(element, comments) {
   comments.forEach(el => {
     let item = document.createElement('li');
     item.innerHTML = `
-            ${el.name}: ${el.comment}
-      `;
+    <div class='onecomment'>
+    <div class='commentdate'>
+      ${el.date}
+    </div>
+    <div class='commentname'>
+            ${el.name}: 
+            </div>
+            <div class='commenttext'>
+             ${el.comment} 
+             </div>
+     </div> `;
 
     element.appendChild(item);
   });
@@ -74,7 +83,7 @@ class Comments {
 
   addSubmitListener(postName) {
     // use element.ontouchend to avoid more than one listener getting attached at a time to the button.
-    document.getElementById('commentSubmit').ontouchend = () => {
+    document.getElementById('commentSubmit').onclick = () => {
       // debugger;
       this.model.addComment(
         postName,
