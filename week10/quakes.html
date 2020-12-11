@@ -13,7 +13,12 @@
         padding-left: 0;
       }
       .quakeStyles li {
-        margin: 0.5em 0;
+        margin: .5rem auto;
+        background-color: violet;
+        text-align: center;
+        padding: 2rem;
+        cursor: pointer;
+        max-width: 600px;
       }
       .quakeStyles div {
         font-size: 0.8em;
@@ -26,18 +31,6 @@
       .red {
         color: rgb(167, 0, 0);
         text-align: center;
-      }
-
-      main {
-        margin: auto;
-      }
-
-      li {
-        background-color: violet;
-        text-align: center;
-        padding: 2rem;
-        cursor: pointer;
-        max-width: 600px;
       }
 
       .nopointer {
@@ -58,7 +51,6 @@
       <h1>Quake List</h1>
       <ul id="quakeList" class="quakeStyles"></ul>
     </main>
-
     <div class="hidden" id="back"><a onclick='reset()'><button>Back</button></a></div>
 
 
