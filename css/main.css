@@ -29,6 +29,10 @@ a {
   font: 1.2rem/1.5 'Staatliches', cursive;
 }
 
+a:active {
+  color: black;
+}
+
 a:hover {
   color: violet;
 }
