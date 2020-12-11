@@ -13,10 +13,6 @@ h1 {
   border-bottom: violet 5px dotted;
 }
 
-.list {
-  margin-left: 5%;
-}
-
 li {
   list-style: none;
   font: 1.2rem/1.5 'Staatliches', cursive;
