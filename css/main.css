@@ -1,6 +1,8 @@
 body {
   background-color: rgb(255, 239, 255);
   padding: 2%;
+  max-width: 900px;
+  margin: auto;
 }
 
 h1 {

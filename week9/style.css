@@ -1,7 +1,5 @@
 body,
 html {
-    margin: 0;
-    padding: 0;
     font-family: sans-serif;
 }
 
@@ -17,9 +15,9 @@ html {
     display: inline-block;
     border: .4rem solid black;
     border-radius: .5rem;
-    margin: 1rem;
+    margin: .2rem;
     font-size: .5rem;
-    padding: 1rem .5rem;
+    padding: 1rem .2rem;
     transition: all .07s ease;
     text-align: center;
     color: white;
