@@ -26,14 +26,15 @@ async function getAPI(url) {
       throw Error(response.statusText)
     } else {
       const fetchJson = await response.json();
-      outputDiv.innerHTML = text()
+      renderAPI(fetchJson)
     }
   } catch (error) {
     console.log(error);
   }
 }
-
-
+function renderAPI(data) {
+      outputDiv.innerHTML = data
+}
 apiButton.addEventListener('click', () => {
   fetch(apiURL)
   .then(response => {
