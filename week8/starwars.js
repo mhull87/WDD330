@@ -1,6 +1,6 @@
 const output = document.getElementById('output');
 
-const apiURL = 'https://swapi.co/api/people/';
+const apiURL = 'https://swapi.dev/api/people/';
 
 fetch(apiURL)
   .then(response => {
