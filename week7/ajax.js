@@ -19,6 +19,21 @@ textButton.addEventListener('click', () => {
   .catch(error => console.log('There was an error:', error))
 }, false);
 
+async function getAPI(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error(response.statusText)
+    } else {
+      const fetchJson = await response.json();
+      outputDiv.innerHTML = text()
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+
 apiButton.addEventListener('click', () => {
   fetch(apiURL)
   .then(response => {
