@@ -32,6 +32,7 @@ async function getStarwars(url) {
 function renderStarwars(data) {
   document.getElementById('prevBtn').classList.remove('hidden');
   document.getElementById('nextBtn').classList.remove('hidden');
+  document.getElementById('btn').classList.add('hidden');
   const peopleList = document.getElementById('output');
   const nextBtn = document.getElementById('nextBtn');
 
