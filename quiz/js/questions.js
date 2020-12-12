@@ -1,6 +1,7 @@
 import progressbar from './progressbar.js';
 import endphrase from './ending.js';
 import checkanswer from './answer.js';
+import timer from './timer.js';
 
 
 export default function displayQuestions(response) {
@@ -25,6 +26,8 @@ function displayQuestion1(response) {
 
   checkanswer(answer);
 
+  timer();
+
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -48,7 +51,6 @@ function displayQuestion2(response) {
   progressbar();
 
   checkanswer(answer);
-
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -72,7 +74,6 @@ function displayQuestion3(response) {
   progressbar();
 
   checkanswer(answer);
-
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -96,7 +97,6 @@ function displayQuestion4(response) {
   progressbar();
 
   checkanswer(answer);
-
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -120,7 +120,6 @@ function displayQuestion5(response) {
   progressbar();
 
   checkanswer(answer);
-
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -144,7 +143,6 @@ function displayQuestion6(response) {
   progressbar();
 
   checkanswer(answer);
-
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -168,7 +166,6 @@ function displayQuestion7(response) {
   progressbar();
 
   checkanswer(answer);
-
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -192,7 +189,6 @@ function displayQuestion8(response) {
   progressbar();
 
   checkanswer(answer);
-
   document.getElementById('next').onclick = next_question;
 
   function next_question() {
@@ -214,7 +210,6 @@ function displayQuestion9(response) {
   document.getElementById('choice4').innerHTML = wrong3;
 
   progressbar();
-
   checkanswer(answer);
 
   document.getElementById('next').onclick = next_question;
@@ -240,7 +235,6 @@ function displayQuestion10(response) {
   progressbar();
 
   checkanswer(answer);
-
   let next = document.getElementById('next');
   next.innerText = 'Finish';
 
