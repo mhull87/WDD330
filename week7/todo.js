@@ -1,4 +1,4 @@
-/* const form = document.forms['todo'];
+ const form = document.forms['todo'];
 form.addEventListener('submit', addTask, false);
 
 function addTask(event) {
@@ -16,9 +16,9 @@ const headers = new Headers({
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 });
-const request = new Request(url,
+const request = new Request(form.action,
   {
-    method: 'POST',
+    method: form.method,
     header: headers,
     body: data
   }
@@ -28,9 +28,9 @@ const request = new Request(url,
   .then(response => response.json())
   .then(task => console.log(`Task saved with an id of ${task.id}`))
   .catch(error => console.log('There was an error:', error))
-} */
+} 
 
-const form = document.forms['todo'];
+/*const form = document.forms['todo'];
 
 form.addEventListener('submit', addTask, false);
 
@@ -55,4 +55,4 @@ function addTask(event) {
     .then(response => response.json())
     .then(data => console.log(`${data.title} saved with an id of ${data.id}`))
     .catch(error => console.log('There was an error:', error))
-}
+}*/
