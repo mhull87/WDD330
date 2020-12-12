@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>Document</title>
   <script src="starwars.js"></script>
   <link href="../css/main.css" rel="stylesheet">
@@ -38,7 +38,7 @@
         <button id="nextBtn" class="hidden" onclick="getNext()">next >></button>
   </div>
   <div class='center'>
-    <button id="btn"  rel="noreferrer" onclick="getStarwars(url = 'https://swapi.co/api/people/')">People List</button>
+    <button id="btn"  rel="noreferrer" onclick="renderStarwars()">People List</button>
   </div>
   <div class="btn"><a href="index.html"><button>Back to Week 8</button></a></div>
 </body>
