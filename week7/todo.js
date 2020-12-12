@@ -16,9 +16,9 @@ const headers = new Headers({
   'Accept': 'application/json',
   'Content-Type': 'application/json'
 });
-const request = new Request(form.action,
+const request = new Request(url,
   {
-    method: form.method,
+    method: 'POST',
     header: headers,
     body: data
   }
