@@ -65,7 +65,7 @@ export default class Hikes {
   addHikeListener() {
     const childrenArray = Array.from(this.parentElement.children);
     childrenArray.forEach(child => {
-      child.addEventListener('touchend', e => {
+      child.addEventListener('click', e => {
         this.showOneHike(e.currentTarget.dataset.name);
       });
     });
@@ -74,7 +74,7 @@ export default class Hikes {
   buildBackButton() {
     const backButton = document.createElement('button');
     backButton.innerHTML = '&lt; - All Hikes';
-    backButton.addEventListener('touchend', () => {
+    backButton.addEventListener('click', () => {
       this.showHikeList();
     });
     backButton.classList.add('hidden');

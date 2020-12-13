@@ -362,7 +362,7 @@
       const test = email5.value.length === 0 || emailRegExp.test(email5.value);
       if (test) {
         email5.className = "valid";
-        error.innerHTML = "";
+        error.textContent = "";
         error.className = "error";
       } else {
         email5.className = "invalid";
@@ -382,7 +382,7 @@
         return false;
       } else {
         email5.className = "valid";
-        error.innerHTML = "";
+        error.textContent = "";
         error.className = "error";
       }
     });
