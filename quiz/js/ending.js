@@ -19,5 +19,32 @@ export default function endphrase() {
   }
 
   document.getElementById('scorediv').classList.remove('hidden');
+  document.getElementById('highscore').classList.remove('hidden');
   document.querySelector('#playagain').onclick = reset;
+
+  const highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+  console.log(highscores);
+
+  const scorearray = {
+    score: endingscore
+  };
+
+  highscores.push(scorearray);
+  highscores.sort((a,b) => b.score - a.score)
+  highscores.splice(5);
+
+  localStorage.setItem('highscores', JSON.stringify(highscores));
+  const hsdiv = document.getElementById('highscorelist');
+
+  hsdiv.innerHTML = highscores.map(score => { 
+    return `<li class='hslist'>${score.score}</li>`;
+  })
+
+  document.querySelector('#highscore').onclick = showHS;
+}
+
+function showHS() {
+  document.getElementById('curtain').classList.add('hidden');
+  document.getElementById('highscorediv').classList.remove('hidden');
+  document.getElementById('playagain2').onclick = reset;
 }

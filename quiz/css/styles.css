@@ -43,6 +43,7 @@ h2 {
   display: inline-block;
   font-family: "Sigmar One", cursive;
   font-size: 17px;
+  margin: 1rem;
   padding: 12px 44px;
   text-decoration: none;
   text-shadow: 0 1px 0 #528ecc;
@@ -141,6 +142,11 @@ p {
 
 .scoretext {
   display: flex;
+}
+
+.hslist {
+  margin: auto;
+  width: fit-content;
 }
 
 body {
