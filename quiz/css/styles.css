@@ -234,6 +234,10 @@ body {
   z-index: 2;
 }
 
+.highscore {
+  z-index: 2;
+}
+
 body {
   background-color: aquamarine;
 }
